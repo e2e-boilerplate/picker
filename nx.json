@@ -25,6 +25,13 @@
     "picker-e2e": {
       "tags": [],
       "implicitDependencies": ["picker"]
+    },
+    "dashboard": {
+      "tags": []
+    },
+    "dashboard-e2e": {
+      "tags": [],
+      "implicitDependencies": ["dashboard"]
     }
   }
 }

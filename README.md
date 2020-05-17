@@ -82,3 +82,9 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+
+## Github pages
+
+Run `ng build --prod --base-href https://e2e-boilerplate.github.io/picker/`
+
+Run `npx ngh --dir dist/apps/picker`
