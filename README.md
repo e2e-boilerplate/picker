@@ -88,3 +88,13 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 Run `ng build --prod --base-href https://e2e-boilerplate.github.io/picker/`
 
 Run `npx ngh --dir dist/apps/picker`
+
+## NX remove app
+
+Run `npx nx g @nrwl/workspace:rm <app-name>`
+
+## NX create a new comp
+
+Run `ng g m home --routing`
+
+Run `ng g c home`

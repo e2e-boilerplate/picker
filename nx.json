@@ -26,12 +26,11 @@
       "tags": [],
       "implicitDependencies": ["picker"]
     },
-    "dashboard": {
+    "material": {
       "tags": []
     },
-    "dashboard-e2e": {
-      "tags": [],
-      "implicitDependencies": ["dashboard"]
+    "core-data": {
+      "tags": []
     }
   }
 }

@@ -1,1 +1,102 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  height: 100%;
+  display: flex;
+}
+
+p {
+  margin: 16px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container [class*='col'] {
+  padding: 10px;
+  flex: 1;
+}
+
+.mat-card-header-text {
+  margin-left: 0;
+  border-bottom: 1px solid #ffd740;
+}
+
+.header {
+  padding-bottom: 10px;
+  color: #673ab7;
+  border-bottom: 2px solid #673ab7;
+}
+
+picker-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+mat-card:not(.dashboard-card) {
+  margin-bottom: 20px;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.dashboard-card {
+  position: absolute !important;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  mat-card-header {
+    justify-content: center;
+  }
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.grid-container {
+  margin: 20px;
+}
+
+mat-card-actions {
+  margin-bottom: 0;
+}
+
+.full-width {
+  width: 50%;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 0.54);
+  display: flex !important;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
