@@ -21,6 +21,8 @@ body {
 .mat-card {
   display: flex;
   flex-direction: column;
+  width: 270px;
+  hight: 270px;
 }
 
 .mat-card-header {}
@@ -60,4 +62,9 @@ body {
 .my-class{
   width: 100px!important;
   min-width: unset!important;
+}
+
+mat-card img{
+  width: 260px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 260px;
 }
