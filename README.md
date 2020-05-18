@@ -98,3 +98,23 @@ Run `npx nx g @nrwl/workspace:rm <app-name>`
 Run `ng g m home --routing`
 
 Run `ng g c home`
+
+## Material Design card
+
+https://material.io/components/cards#usage
+https://alligator.io/angular/material-design-angular-reference/
+https://material.io/resources/icons/?style=baseline
+
+<mat-icon>check_circle_outline</mat-icon> 241234
+        <mat-icon>done</mat-icon> 241234
+        <mat-icon>favorite</mat-icon> 241234
+        <mat-icon inline="true">favorite_border</mat-icon>  241234
+        <mat-icon>launch</mat-icon> 241234
+        <mat-icon>rowing</mat-icon> 241234
+        <mat-icon>plus_one</mat-icon> 241234
+        <mat-icon>thumb_up_alt</mat-icon> 241234
+        <mat-icon>poll</mat-icon> 241234
+        <mat-icon>directions_walk</mat-icon> 241234
+        <mat-icon>local_grocery_store</mat-icon> 241234
+        <mat-icon>add</mat-icon> 241234
+        <mat-icon>link</mat-icon> 241234

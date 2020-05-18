@@ -1,17 +1,38 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-html {
-  height: 100%;
+.container {
+  display: -webkit-flex; /* targets Chrome, Safari */
+  display: -ms-flexbox; /* targets IE10 */
+  display: flex;
+  flex-direcion: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container [class*='col'] {
+  padding: 12px;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, sans-serif;
-  height: 100%;
-  display: flex;
+  font-family: Roboto, Arial, Helvetica, sans-serf;
+  background-color: #fbfbfd;
 }
 
-p {
-  margin: 16px;
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-header {}
+
+.mat-card-title {}
+.mat-card-content {
+  display: flex;
+  flex: 1;
+}
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
 }
 
 * {
@@ -19,84 +40,24 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
+.outer-div {
   display: flex;
-  margin: 10px;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
 }
-
-.container [class*='col'] {
-  padding: 10px;
-  flex: 1;
+.outer-div > span {
+  font-size: 10px;
 }
 
-.mat-card-header-text {
-  margin-left: 0;
-  border-bottom: 1px solid #ffd740;
-}
-
-.header {
-  padding-bottom: 10px;
-  color: #673ab7;
-  border-bottom: 2px solid #673ab7;
-}
-
-picker-root {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-mat-card:not(.dashboard-card) {
-  margin-bottom: 20px;
-}
-
-.fill-remaining-space {
-  flex: 1 1 auto;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.dashboard-card {
-  position: absolute !important;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  mat-card-header {
-    justify-content: center;
-  }
-}
-
-.dashboard-card-content {
-  text-align: center;
-}
-
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.grid-container {
-  margin: 20px;
-}
-
-mat-card-actions {
-  margin-bottom: 0;
-}
-
-.full-width {
-  width: 50%;
-}
-
-.nav-link {
-  color: rgba(0, 0, 0, 0.54);
-  display: flex !important;
+.material-icons {
+  display: inline-flex;
   align-items: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.my-class{
+  width: 100px!important;
+  min-width: unset!important;
 }
