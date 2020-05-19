@@ -1,1 +1,12 @@
+.home {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 
+.home-blurb p{
+  text-align: center
+}
