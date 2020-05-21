@@ -36,6 +36,6 @@ describe('HomeComponent', () => {
     home.nativeElement.click();
     fixture.detectChanges();
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith (['/platform']);
+    expect(mockRouter.navigate).toHaveBeenCalledWith (['/platforms']);
   });
 });

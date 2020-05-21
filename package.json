@@ -77,7 +77,9 @@
   },
   "lint-staged": {
     "*.{js,ts,json,md}": [
-      "prettier --write"
+      "prettier --write",
+      "tslint --fix",
+      "jest --bail"
     ]
   }
 }

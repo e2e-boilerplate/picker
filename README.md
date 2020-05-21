@@ -93,7 +93,14 @@ Run `npx ngh --dir dist/apps/picker`
 
 Run `npx nx g @nrwl/workspace:rm <app-name>`
 
-## NX create a new comp
+## NX generate new component
+If the component is a feature component to witch you will eventually route add routing first
+
+    ng g m platforms --routing
+    
+    ng g c platforms
+
+## NX create a routing new comp
 
 Run `ng g m home --routing`
 
@@ -102,7 +109,9 @@ Run `ng g c home`
 ## Material Design card
 
 https://material.io/components/cards#usage
+
 https://alligator.io/angular/material-design-angular-reference/
+
 https://material.io/resources/icons/?style=baseline
 
 <mat-icon>check_circle_outline</mat-icon> 241234
@@ -118,3 +127,8 @@ https://material.io/resources/icons/?style=baseline
         <mat-icon>local_grocery_store</mat-icon> 241234
         <mat-icon>add</mat-icon> 241234
         <mat-icon>link</mat-icon> 241234
+
+## Service
+    ng g s platforms/platforms --project=core-data -d
+    
+    ng g i platforms/platform --project=core-data -d

@@ -7,9 +7,9 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'platform',
+    path: 'platforms',
     loadChildren: () =>
-      import('./platform/platform.module').then((m) => m.PlatformModule),
+      import('./platforms/platforms.module').then((m) => m.PlatformsModule),
   },
 ];
 
