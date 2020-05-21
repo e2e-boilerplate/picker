@@ -7,12 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2 🛎️
       - name: node
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: 'npm:install'
+      - name: 'npm:install 📦'
         run: npm install
         env:
           CI: true
@@ -24,7 +24,7 @@ jobs:
         run: npm run e2e
       - name: unit test
         run: npm run test
-      - name: Deploy 🚀
+      - name: deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
