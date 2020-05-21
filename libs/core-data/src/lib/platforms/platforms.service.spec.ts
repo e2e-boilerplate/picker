@@ -21,6 +21,6 @@ describe('PlatformsService', () => {
   });
 
   it('should get all platforms', () => {
-    expect(service.all()).toEqual([]);
+    expect(service.all()).toEqual(platforms);
   });
 });
