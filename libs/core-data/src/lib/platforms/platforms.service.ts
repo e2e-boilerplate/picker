@@ -28,12 +28,6 @@ export class PlatformsService {
 
   all(): Observable<Platform[]>{
     return this.httpClient
-      .get<Platform[]>(`${BASE_URL}${this.model}.json`)
-      .pipe(retry(3), catchError(this.handleError));
+      .get<Platform[]>(`${BASE_URL}${this.model}.json`);
   }
 }
-
-// https://www.positronx.io/angular-error-handling-tutorial-with-examples/
-// https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors-in-angular-db450f8a62d6
-// https://itnext.io/handle-http-responses-with-httpinterceptor-and-toastr-in-angular-3e056759cb16
-// https://pusher.com/tutorials/error-handling-angular-part-2

@@ -72,14 +72,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
     }
   },
   "lint-staged": {
     "*.{js,ts,json,md}": [
       "prettier --write",
-      "tslint --fix",
-      "jest --bail"
+      "tslint --fix"
     ]
   }
 }
