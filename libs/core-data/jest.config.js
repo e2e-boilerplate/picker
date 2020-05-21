@@ -1,6 +1,7 @@
 module.exports = {
   name: 'core-data',
   preset: '../../jest.config.js',
+  collectCoverage: true,
   coverageDirectory: '../../coverage/libs/core-data',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
