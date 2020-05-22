@@ -1,1 +1,5 @@
-<pre>{{ platforms$ | async | json}}</pre>
+<div class="platforms">
+  <div *ngFor="let platform of platforms$ | async">
+    <picker-card [item]="platform"></picker-card>
+  </div>
+</div>
