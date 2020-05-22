@@ -40,47 +40,47 @@
             {
               "file": "apps/picker-e2e/cypress.json",
               "ext": ".json",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/src/fixtures/home.json",
               "ext": ".json",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/src/integration/home.spec.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/src/plugins/index.js",
               "ext": ".js",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/src/support/commands.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/src/support/index.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/tsconfig.e2e.json",
               "ext": ".json",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/tsconfig.json",
               "ext": ".json",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker-e2e/tslint.json",
               "ext": ".json",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             }
           ]
         }
@@ -127,52 +127,77 @@
             {
               "file": "libs/core-data/README.md",
               "ext": ".md",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/jest.config.js",
               "ext": ".js",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/src/index.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/src/lib/core-data.module.spec.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/src/lib/core-data.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
+            },
+            {
+              "file": "libs/core-data/src/lib/interceptor/interceptor.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1590109375044.0315
+            },
+            {
+              "file": "libs/core-data/src/lib/interceptor/interceptor.service.ts",
+              "ext": ".ts",
+              "mtime": 1590109375044.0315
+            },
+            {
+              "file": "libs/core-data/src/lib/platforms/platform.ts",
+              "ext": ".ts",
+              "mtime": 1590109375044.0315
+            },
+            {
+              "file": "libs/core-data/src/lib/platforms/platforms.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1590109375044.0315
+            },
+            {
+              "file": "libs/core-data/src/lib/platforms/platforms.service.ts",
+              "ext": ".ts",
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/src/test-setup.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/tsconfig.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/tsconfig.lib.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/tsconfig.spec.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/core-data/tslint.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             }
           ]
         }
@@ -219,52 +244,52 @@
             {
               "file": "libs/material/README.md",
               "ext": ".md",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/jest.config.js",
               "ext": ".js",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/src/index.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/src/lib/material.module.spec.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/src/lib/material.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/src/test-setup.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/tsconfig.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/tsconfig.lib.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/tsconfig.spec.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "libs/material/tslint.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             }
           ]
         }
@@ -378,167 +403,167 @@
             {
               "file": "apps/picker/browserslist",
               "ext": "",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/jest.config.js",
               "ext": ".js",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/app-routing.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/app.component.html",
               "ext": ".html",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/app.component.scss",
               "ext": ".scss",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/app.component.spec.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/app.component.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/home/home-routing.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/home/home.component.css",
               "ext": ".css",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/home/home.component.html",
               "ext": ".html",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/home/home.component.spec.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/home/home.component.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/app/home/home.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
-              "file": "apps/picker/src/app/platform/platform-routing.module.ts",
+              "file": "apps/picker/src/app/platforms/platforms-routing.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
-              "file": "apps/picker/src/app/platform/platform.component.css",
+              "file": "apps/picker/src/app/platforms/platforms.component.css",
               "ext": ".css",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
-              "file": "apps/picker/src/app/platform/platform.component.html",
+              "file": "apps/picker/src/app/platforms/platforms.component.html",
               "ext": ".html",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
-              "file": "apps/picker/src/app/platform/platform.component.spec.ts",
+              "file": "apps/picker/src/app/platforms/platforms.component.spec.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
-              "file": "apps/picker/src/app/platform/platform.component.ts",
+              "file": "apps/picker/src/app/platforms/platforms.component.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
-              "file": "apps/picker/src/app/platform/platform.module.ts",
+              "file": "apps/picker/src/app/platforms/platforms.module.ts",
               "ext": ".ts",
-              "mtime": 1590029402245.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/assets/.gitkeep",
               "ext": "",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/environments/environment.prod.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/environments/environment.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/favicon.ico",
               "ext": ".ico",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/index.html",
               "ext": ".html",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/main.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/polyfills.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/styles.scss",
               "ext": ".scss",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/src/test-setup.ts",
               "ext": ".ts",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/tsconfig.app.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/tsconfig.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/tsconfig.spec.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             },
             {
               "file": "apps/picker/tslint.json",
               "ext": ".json",
-              "mtime": 1590029402249.2725
+              "mtime": 1590109375044.0315
             }
           ]
         }
@@ -767,6 +792,14 @@
           "files": []
         }
       },
+      "husky": {
+        "type": "npm",
+        "name": "husky",
+        "data": {
+          "version": "^4.2.5",
+          "files": []
+        }
+      },
       "jest": {
         "type": "npm",
         "name": "jest",
@@ -859,6 +892,11 @@
         {
           "type": "static",
           "source": "core-data",
+          "target": "rxjs"
+        },
+        {
+          "type": "static",
+          "source": "core-data",
           "target": "jest-preset-angular"
         }
       ],
@@ -883,6 +921,11 @@
         {
           "type": "static",
           "source": "picker",
+          "target": "core-data"
+        },
+        {
+          "type": "static",
+          "source": "picker",
           "target": "material"
         },
         {
@@ -904,6 +947,11 @@
           "type": "static",
           "source": "picker",
           "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "picker",
+          "target": "rxjs"
         },
         {
           "type": "static",
@@ -949,6 +997,7 @@
       "cypress": [],
       "dotenv": [],
       "eslint": [],
+      "husky": [],
       "jest": [],
       "jest-preset-angular": [],
       "lint-staged": [],
@@ -964,318 +1013,343 @@
       {
         "file": "apps/picker-e2e/cypress.json",
         "ext": ".json",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/src/fixtures/home.json",
         "ext": ".json",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/src/integration/home.spec.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/src/plugins/index.js",
         "ext": ".js",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/src/support/commands.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/src/support/index.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/tsconfig.e2e.json",
         "ext": ".json",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/tsconfig.json",
         "ext": ".json",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker-e2e/tslint.json",
         "ext": ".json",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       }
     ],
     "core-data": [
       {
         "file": "libs/core-data/README.md",
         "ext": ".md",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/jest.config.js",
         "ext": ".js",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/src/index.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/src/lib/core-data.module.spec.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/src/lib/core-data.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
+      },
+      {
+        "file": "libs/core-data/src/lib/interceptor/interceptor.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1590109375044.0315
+      },
+      {
+        "file": "libs/core-data/src/lib/interceptor/interceptor.service.ts",
+        "ext": ".ts",
+        "mtime": 1590109375044.0315
+      },
+      {
+        "file": "libs/core-data/src/lib/platforms/platform.ts",
+        "ext": ".ts",
+        "mtime": 1590109375044.0315
+      },
+      {
+        "file": "libs/core-data/src/lib/platforms/platforms.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1590109375044.0315
+      },
+      {
+        "file": "libs/core-data/src/lib/platforms/platforms.service.ts",
+        "ext": ".ts",
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/src/test-setup.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/tsconfig.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/tsconfig.lib.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/tsconfig.spec.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/core-data/tslint.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       }
     ],
     "material": [
       {
         "file": "libs/material/README.md",
         "ext": ".md",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/jest.config.js",
         "ext": ".js",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/src/index.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/src/lib/material.module.spec.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/src/lib/material.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/src/test-setup.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/tsconfig.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/tsconfig.lib.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/tsconfig.spec.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "libs/material/tslint.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       }
     ],
     "picker": [
       {
         "file": "apps/picker/browserslist",
         "ext": "",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/jest.config.js",
         "ext": ".js",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/app-routing.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/app.component.html",
         "ext": ".html",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/app.component.scss",
         "ext": ".scss",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/app.component.spec.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/app.component.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/home/home-routing.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/home/home.component.css",
         "ext": ".css",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/home/home.component.html",
         "ext": ".html",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/home/home.component.spec.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/home/home.component.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/app/home/home.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
-        "file": "apps/picker/src/app/platform/platform-routing.module.ts",
+        "file": "apps/picker/src/app/platforms/platforms-routing.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
-        "file": "apps/picker/src/app/platform/platform.component.css",
+        "file": "apps/picker/src/app/platforms/platforms.component.css",
         "ext": ".css",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
-        "file": "apps/picker/src/app/platform/platform.component.html",
+        "file": "apps/picker/src/app/platforms/platforms.component.html",
         "ext": ".html",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
-        "file": "apps/picker/src/app/platform/platform.component.spec.ts",
+        "file": "apps/picker/src/app/platforms/platforms.component.spec.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
-        "file": "apps/picker/src/app/platform/platform.component.ts",
+        "file": "apps/picker/src/app/platforms/platforms.component.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
-        "file": "apps/picker/src/app/platform/platform.module.ts",
+        "file": "apps/picker/src/app/platforms/platforms.module.ts",
         "ext": ".ts",
-        "mtime": 1590029402245.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/assets/.gitkeep",
         "ext": "",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/environments/environment.prod.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/environments/environment.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/favicon.ico",
         "ext": ".ico",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/index.html",
         "ext": ".html",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/main.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/polyfills.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/styles.scss",
         "ext": ".scss",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/src/test-setup.ts",
         "ext": ".ts",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/tsconfig.app.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/tsconfig.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/tsconfig.spec.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       },
       {
         "file": "apps/picker/tslint.json",
         "ext": ".json",
-        "mtime": 1590029402249.2725
+        "mtime": 1590109375044.0315
       }
     ]
   }

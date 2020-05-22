@@ -1,5 +1,147 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "../../libs/core-data/src/index.ts":
+/*!*******************************************************************!*\
+  !*** /home/runner/work/picker/picker/libs/core-data/src/index.ts ***!
+  \*******************************************************************/
+/*! exports provided: CoreDataModule, PlatformsService, InterceptorService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lib_core_data_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/core-data.module */ "../../libs/core-data/src/lib/core-data.module.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CoreDataModule", function() { return _lib_core_data_module__WEBPACK_IMPORTED_MODULE_0__["CoreDataModule"]; });
+
+/* harmony import */ var _lib_platforms_platforms_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/platforms/platforms.service */ "../../libs/core-data/src/lib/platforms/platforms.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlatformsService", function() { return _lib_platforms_platforms_service__WEBPACK_IMPORTED_MODULE_1__["PlatformsService"]; });
+
+/* harmony import */ var _lib_interceptor_interceptor_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/interceptor/interceptor.service */ "../../libs/core-data/src/lib/interceptor/interceptor.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InterceptorService", function() { return _lib_interceptor_interceptor_service__WEBPACK_IMPORTED_MODULE_2__["InterceptorService"]; });
+
+
+
+
+
+
+/***/ }),
+
+/***/ "../../libs/core-data/src/lib/core-data.module.ts":
+/*!**********************************************************************************!*\
+  !*** /home/runner/work/picker/picker/libs/core-data/src/lib/core-data.module.ts ***!
+  \**********************************************************************************/
+/*! exports provided: CoreDataModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoreDataModule", function() { return CoreDataModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _platforms_platforms_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./platforms/platforms.service */ "../../libs/core-data/src/lib/platforms/platforms.service.ts");
+/* harmony import */ var _interceptor_interceptor_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./interceptor/interceptor.service */ "../../libs/core-data/src/lib/interceptor/interceptor.service.ts");
+
+
+
+
+
+class CoreDataModule {
+}
+CoreDataModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: CoreDataModule });
+CoreDataModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function CoreDataModule_Factory(t) { return new (t || CoreDataModule)(); }, providers: [_platforms_platforms_service__WEBPACK_IMPORTED_MODULE_2__["PlatformsService"], _interceptor_interceptor_service__WEBPACK_IMPORTED_MODULE_3__["InterceptorService"]], imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](CoreDataModule, { imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoreDataModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]],
+                providers: [_platforms_platforms_service__WEBPACK_IMPORTED_MODULE_2__["PlatformsService"], _interceptor_interceptor_service__WEBPACK_IMPORTED_MODULE_3__["InterceptorService"]]
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "../../libs/core-data/src/lib/interceptor/interceptor.service.ts":
+/*!*************************************************************************************************!*\
+  !*** /home/runner/work/picker/picker/libs/core-data/src/lib/interceptor/interceptor.service.ts ***!
+  \*************************************************************************************************/
+/*! exports provided: InterceptorService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InterceptorService", function() { return InterceptorService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "../../node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "../../node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+class InterceptorService {
+    constructor() { }
+    intercept(request, next) {
+        return next.handle(request)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["retry"])(3), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])((error) => {
+            if (error.error instanceof ErrorEvent) {
+                console.error('An error occurred:', error.error.message);
+            }
+            else {
+                console.error(`Backend returned code ${error.status}, ` + `body was: ${error.error}`);
+            }
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])('Something bad happened; please try again later.');
+        }));
+    }
+}
+InterceptorService.ɵfac = function InterceptorService_Factory(t) { return new (t || InterceptorService)(); };
+InterceptorService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: InterceptorService, factory: InterceptorService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](InterceptorService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "../../libs/core-data/src/lib/platforms/platforms.service.ts":
+/*!*********************************************************************************************!*\
+  !*** /home/runner/work/picker/picker/libs/core-data/src/lib/platforms/platforms.service.ts ***!
+  \*********************************************************************************************/
+/*! exports provided: PlatformsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlatformsService", function() { return PlatformsService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+
+
+
+class PlatformsService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.BASE_URL = 'https://e2e-boilerplate.github.io/api/v1/';
+        this.model = 'platforms';
+    }
+    all() {
+        return this.httpClient.get(`${this.BASE_URL}${this.model}.json`);
+    }
+}
+PlatformsService.ɵfac = function PlatformsService_Factory(t) { return new (t || PlatformsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
+PlatformsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: PlatformsService, factory: PlatformsService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PlatformsService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root',
+            }]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "../../libs/material/src/index.ts":
 /*!******************************************************************!*\
   !*** /home/runner/work/picker/picker/libs/material/src/index.ts ***!
@@ -220,8 +362,8 @@ const routes = [
         loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then((m) => m.HomeModule),
     },
     {
-        path: 'platform',
-        loadChildren: () => __webpack_require__.e(/*! import() | platform-platform-module */ "platform-platform-module").then(__webpack_require__.bind(null, /*! ./platform/platform.module */ "./src/app/platform/platform.module.ts")).then((m) => m.PlatformModule),
+        path: 'platforms',
+        loadChildren: () => __webpack_require__.e(/*! import() | platforms-platforms-module */ "platforms-platforms-module").then(__webpack_require__.bind(null, /*! ./platforms/platforms.module */ "./src/app/platforms/platforms.module.ts")).then((m) => m.PlatformsModule),
     },
 ];
 class AppRoutingModule {
@@ -284,13 +426,17 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "../../node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "../../node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
-/* harmony import */ var _picker_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @picker/material */ "../../libs/material/src/index.ts");
-/* harmony import */ var _home_home_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home/home.module */ "./src/app/home/home.module.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser/animations */ "../../node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "../../node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "../../node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _home_home_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home.module */ "./src/app/home/home.module.ts");
+/* harmony import */ var _picker_core_data__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @picker/core-data */ "../../libs/core-data/src/index.ts");
+/* harmony import */ var _picker_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @picker/material */ "../../libs/material/src/index.ts");
+
+
 
 
 
@@ -301,32 +447,47 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-            _picker_material__WEBPACK_IMPORTED_MODULE_4__["MaterialModule"],
-            _home_home_module__WEBPACK_IMPORTED_MODULE_5__["HomeModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [
+        {
+            provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"],
+            useClass: _picker_core_data__WEBPACK_IMPORTED_MODULE_7__["InterceptorService"],
+            multi: true
+        }
+    ], imports: [[
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_0__["BrowserAnimationsModule"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+            _home_home_module__WEBPACK_IMPORTED_MODULE_6__["HomeModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+            _picker_material__WEBPACK_IMPORTED_MODULE_8__["MaterialModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-        _picker_material__WEBPACK_IMPORTED_MODULE_4__["MaterialModule"],
-        _home_home_module__WEBPACK_IMPORTED_MODULE_5__["HomeModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"]] }); })();
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]], imports: [_app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_0__["BrowserAnimationsModule"],
+        _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+        _home_home_module__WEBPACK_IMPORTED_MODULE_6__["HomeModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+        _picker_material__WEBPACK_IMPORTED_MODULE_8__["MaterialModule"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](AppModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"],
         args: [{
-                declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]],
+                declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
                 imports: [
-                    _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                    _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                    _picker_material__WEBPACK_IMPORTED_MODULE_4__["MaterialModule"],
-                    _home_home_module__WEBPACK_IMPORTED_MODULE_5__["HomeModule"],
-                    _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+                    _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+                    _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_0__["BrowserAnimationsModule"],
+                    _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                    _home_home_module__WEBPACK_IMPORTED_MODULE_6__["HomeModule"],
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+                    _picker_material__WEBPACK_IMPORTED_MODULE_8__["MaterialModule"],
                 ],
-                providers: [],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]],
+                providers: [
+                    {
+                        provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"],
+                        useClass: _picker_core_data__WEBPACK_IMPORTED_MODULE_7__["InterceptorService"],
+                        multi: true
+                    }
+                ],
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
             }]
     }], null, null); })();
 
@@ -393,7 +554,7 @@ class HomeComponent {
     }
     ngOnInit() { }
     gotoPlatform() {
-        this.router.navigate(['/platform']);
+        this.router.navigate(['/platforms']);
     }
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
