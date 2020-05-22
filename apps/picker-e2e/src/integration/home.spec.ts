@@ -1,6 +1,6 @@
 describe('Home', () => {
   before(() => {
-    cy.visit("/");
+    cy.visit('/');
   });
 
   it('start', () => {
@@ -8,8 +8,8 @@ describe('Home', () => {
   });
 
   it('platform', () => {
-    cy.url().then(url => {
-      expect(url).to.eq("http://localhost:4200/platform");
+    cy.url().then((url) => {
+      expect(url).to.eq('http://localhost:4200/platforms');
     });
   });
 });
