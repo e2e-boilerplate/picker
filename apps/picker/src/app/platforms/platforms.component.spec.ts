@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PlatformsComponent } from './platforms.component';
+import { SharedModule } from '../shared/shared.module';
 
 describe('PlatformsComponent', () => {
   let component: PlatformsComponent;
@@ -9,10 +10,9 @@ describe('PlatformsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      declarations: [ PlatformsComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, SharedModule],
+      declarations: [PlatformsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
