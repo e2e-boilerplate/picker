@@ -7,11 +7,11 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageReporters: ['json', 'text'],
   coverageThreshold: {
-    "global": {
-      "branches": 80,
-      "functions": 80,
-      "lines": 80,
-      "statements": -10
-    }
-  }
+    global: {
+      branches: 0,
+      functions: 50,
+      lines: 50,
+      statements: -10,
+    },
+  },
 };
