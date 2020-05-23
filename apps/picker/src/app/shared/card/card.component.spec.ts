@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MaterialModule } from '@picker/material';
+import { platform } from '@picker/constants';
 
 import { CardComponent } from './card.component';
 
@@ -17,7 +18,9 @@ describe('CardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
-    component.item = {};
+    component.item = {
+      ...platform
+    };
     fixture.detectChanges();
   });
 
