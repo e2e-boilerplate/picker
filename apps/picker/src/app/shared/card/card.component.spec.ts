@@ -19,7 +19,7 @@ describe('CardComponent', () => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
     component.item = {
-      ...platform
+      ...platform,
     };
     fixture.detectChanges();
   });

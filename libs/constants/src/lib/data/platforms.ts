@@ -7,7 +7,7 @@ export const platform = {
   link: 'link',
   domain: 'domain',
   maintained: 'maintained',
-  avatar: false
+  avatar: false,
 };
 
 export const platforms = [
@@ -20,7 +20,7 @@ export const platforms = [
     link: 'link',
     domain: 'domain',
     maintained: 'maintained',
-    avatar: false
+    avatar: false,
   },
   {
     id: 'id',
@@ -31,6 +31,6 @@ export const platforms = [
     link: 'link',
     domain: 'domain',
     maintained: 'maintained',
-    avatar: true
-  }
+    avatar: true,
+  },
 ];
