@@ -74,7 +74,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm test && npm run e2e"
+      "pre-push": "npm test && npm run e2e && npm run pre:deploye && npm run deploye"
     }
   },
   "lint-staged": {
