@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { InterceptorService } from '@picker/core-data';
 import { MaterialModule } from '@picker/material';
+import { FrameworksComponent } from './frameworks/frameworks.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FrameworksComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -23,8 +24,8 @@ import { MaterialModule } from '@picker/material';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
-      multi: true
-    }
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

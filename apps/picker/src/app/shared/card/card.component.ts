@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { Platform } from '@picker/core-data';
 
 @Component({
   selector: 'picker-card',
@@ -6,9 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Input() item;
+  @Input() item: Platform;
+  @Output() selected = new EventEmitter<Platform>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectedItem(value: Platform) {
+    this.selected.emit(value);
+  }
 }

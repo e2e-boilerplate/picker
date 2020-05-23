@@ -23,4 +23,8 @@ export class PlatformsComponent implements OnInit {
   getPlatforms() {
     this.platforms$ = this.platformsService.all();
   }
+
+  setSelected(platform: Platform) {
+    this.selectedPlatform = platform;
+  }
 }
