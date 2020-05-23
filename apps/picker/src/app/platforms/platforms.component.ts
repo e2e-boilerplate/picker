@@ -10,6 +10,7 @@ import { Platform } from '@picker/core-data';
   styleUrls: ['./platforms.component.css'],
 })
 export class PlatformsComponent implements OnInit {
+  title = 'platform';
   platforms$: Observable<Platform[]>;
   selectedPlatform: Platform;
 

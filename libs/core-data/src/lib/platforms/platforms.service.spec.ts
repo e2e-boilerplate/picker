@@ -39,10 +39,30 @@ describe('PlatformsService', () => {
     let expectedPlatforms: Platform[];
 
     beforeEach(() => {
-      expectedPlatforms = [
-        { name: 'platform1' },
-        { name: 'platform2' },
-      ] as Platform[];
+      expectedPlatforms = ([
+        {
+          id: 'id1',
+          title: 'title1',
+          subtitle: 'sub1',
+          summary: 'sum1',
+          description: 'desc1',
+          link: 'link1',
+          domain: 'dom1',
+          maintained: 'by1',
+          avatar: 'ava1',
+        },
+        {
+          id: 'id2',
+          title: 'title2',
+          subtitle: 'sub2',
+          summary: 'sum2',
+          description: 'desc2',
+          link: 'link2',
+          domain: 'dom2',
+          maintained: 'by2',
+          avatar: 'ava2',
+        },
+      ] as unknown) as Platform[];
     });
 
     it('should return expected platforms', () => {

@@ -1,5 +1,10 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 body {
   font-family: Roboto, Arial, Helvetica, sans-serf;
   background-color: #fbfbfd;
+}
+a {
+  text-decoration: none;
+  color: crimson;
 }

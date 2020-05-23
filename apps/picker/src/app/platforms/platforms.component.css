@@ -1,9 +1,9 @@
 .platforms {
-  margin-top: 150px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding:0 15px;
+  margin-top: 75px;
 }
