@@ -7,6 +7,7 @@ module.exports = {
     '!./src/lib/interceptor/**',
     '!**/jest.config.js',
     '!./src/index.ts',
+    '!./src/lib/**/*.mock.ts',
   ],
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
