@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-import { Platform } from '@picker/core-data';
+import { Platform } from './platform';
 import { API_BASE_URL } from '@picker/constants';
 
 @Injectable({
