@@ -66,7 +66,6 @@ describe('PlatformsComponent', () => {
       );
       const title = matCardTitle[0].nativeElement.textContent;
       expect(title).toEqual(platforms[i].title);
-      // TODO add test for all fields
     }
   });
 
