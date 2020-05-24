@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PlatformsService } from '@picker/core-data';
 import { Router } from '@angular/router';
 
 import { Platform } from '@picker/core-data';
+import { PlatformsService } from '@picker/core-data';
 
 @Component({
   selector: 'picker-platforms',

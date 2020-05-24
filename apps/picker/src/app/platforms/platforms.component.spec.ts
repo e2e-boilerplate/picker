@@ -9,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import {
   Platform,
   PlatformsService,
-  MockPlatformService,
+  MockPlatformsService,
 } from '@picker/core-data';
 import { platforms } from '@picker/constants';
 
@@ -24,7 +24,7 @@ describe('PlatformsComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule, SharedModule],
       declarations: [PlatformsComponent],
-      providers: [{ provide: PlatformsService, useClass: MockPlatformService }, { provide: Router, useValue: mockRouter }],
+      providers: [{ provide: PlatformsService, useClass: MockPlatformsService }, { provide: Router, useValue: mockRouter }],
     }).compileComponents();
   }));
 
