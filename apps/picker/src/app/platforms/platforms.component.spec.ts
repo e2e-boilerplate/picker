@@ -55,17 +55,23 @@ describe('PlatformsComponent', () => {
 
   it('should have correct title binding', () => {
     const element = fixture.debugElement.query(By.css('picker-toolbar'));
-    expect(element.nativeElement.getAttribute('ng-reflect-title')).toEqual(component.title);
+    expect(element.nativeElement.getAttribute('ng-reflect-title')).toEqual(
+      component.title
+    );
   });
 
   it('should have platform cards', () => {
     const matCard = fixture.debugElement.queryAll(By.css('mat-card'));
     for (let i = 0; i < matCard.length; i++) {
-      const matCardTitle = fixture.debugElement.queryAll(By.css('mat-card-title'));
+      const matCardTitle = fixture.debugElement.queryAll(
+        By.css('mat-card-title')
+      );
       const title = matCardTitle[0].nativeElement.textContent;
       expect(title).toEqual(platforms[i].title);
 
-      const matCardSubTitle = fixture.debugElement.queryAll(By.css('mat-card-subtitle'));
+      const matCardSubTitle = fixture.debugElement.queryAll(
+        By.css('mat-card-subtitle')
+      );
       const subtitle = matCardSubTitle[0].nativeElement.textContent;
       expect(subtitle).toEqual(platforms[i].subtitle);
       // TODO add test for all fields
