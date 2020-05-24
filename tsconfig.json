@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@picker/material": ["libs/material/src/index.ts"],
-      "@picker/core-data": ["libs/core-data/src/index.ts"]
+      "@picker/core-data": ["libs/core-data/src/index.ts"],
+      "@picker/constants": ["libs/constants/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

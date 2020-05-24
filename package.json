@@ -73,14 +73,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test && npm run e2e && npm run pre:deploye && npm run deploye"
+      "pre-commit": "npm run format:write && lint-staged",
+      "pre-push": "npm test && npm run e2e"
     }
   },
   "lint-staged": {
-    "*.{js,ts,json,md}": [
-      "tslint --fix",
-      "prettier --write"
+    "*.{js,ts}": [
+      "tslint --fix"
     ]
   }
 }
