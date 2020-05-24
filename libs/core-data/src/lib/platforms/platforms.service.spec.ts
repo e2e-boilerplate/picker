@@ -1,23 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { of } from 'rxjs';
 
-import { PlatformsService } from '@picker/core-data';
-import { platforms } from '@picker/constants';
+import { PlatformsService } from './platforms.service';
+import { platforms, MockPlatformService } from '@picker/constants';
 
-export class MockService {
-  all() {
-    return of({ ...platforms });
-  }
-}
 
-describe.only('PlatformsService', () => {
+describe('PlatformsService', () => {
   let platformsService: PlatformsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [{ provide: PlatformsService, useClass: MockService }]
+      providers: [{ provide: PlatformsService, useClass: MockPlatformService }]
     });
 
     platformsService = TestBed.inject(PlatformsService);
