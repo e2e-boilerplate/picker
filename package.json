@@ -42,7 +42,7 @@
     "@angular/platform-browser-dynamic": "9.1.7",
     "@angular/router": "9.1.7",
     "@nrwl/angular": "9.3.0",
-    "core-js": "2.6.11",
+    "core-js": "3.6.5",
     "rxjs": "6.5.5",
     "zone.js": "0.10.3"
   },
