@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PlatformsService } from '@picker/core-data';
-import { Observable, throwError } from 'rxjs';
 
 import { Platform } from '@picker/core-data';
 
@@ -10,9 +10,9 @@ import { Platform } from '@picker/core-data';
   styleUrls: ['./platforms.component.css'],
 })
 export class PlatformsComponent implements OnInit {
-  title = 'platform';
+  title = 'Platform';
   platforms$: Observable<Platform[]>;
-  selectedPlatform: Platform;
+  selectedPlatform: String;
 
   constructor(private platformsService: PlatformsService) {}
 
@@ -24,7 +24,7 @@ export class PlatformsComponent implements OnInit {
     this.platforms$ = this.platformsService.all();
   }
 
-  setSelected(platform: Platform) {
-    this.selectedPlatform = platform;
+  setSelected(id: String) {
+    this.selectedPlatform = id;
   }
 }

@@ -1,9 +1,7 @@
 module.exports = {
-  name: 'core-data',
+  name: 'constants',
   preset: '../../jest.config.js',
-  collectCoverage: true,
-  coverageDirectory: '../../coverage/libs/core-data',
-  collectCoverageFrom: ['!./src/lib/interceptor/**', '!**/jest.config.js'],
+  coverageDirectory: '../../coverage/libs/constants',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

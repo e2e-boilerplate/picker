@@ -9,13 +9,13 @@ import { Platform } from '@picker/core-data';
 })
 export class CardComponent implements OnInit {
   @Input() item: Platform;
-  @Output() selected = new EventEmitter<Platform>();
+  @Output() selected = new EventEmitter<String>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  selectedItem(value: Platform) {
+  selectedItem(value: String) {
     this.selected.emit(value);
   }
 }
