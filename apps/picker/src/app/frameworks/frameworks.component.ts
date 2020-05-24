@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot, Router, RouterState, RouterStateSnapshot } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'picker-frameworks',
   templateUrl: './frameworks.component.html',
   styleUrls: ['./frameworks.component.css'],
 })
-export class FrameworksComponent implements OnInit {
-  test: RouterStateSnapshot;
+export class FrameworksComponent implements OnInit, OnDestroy {
+  id: string;
+  private sub: any;
 
-  constructor(private router: Router) {
-    const state: RouterState = router.routerState;
-    const snapshot: RouterStateSnapshot = state.snapshot;
-    const root: ActivatedRouteSnapshot = snapshot.root;
-    this.test = snapshot;
+  constructor(private route: ActivatedRoute) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sub = this.route.params.subscribe(param => {
+      this.id = param['id'];
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }
