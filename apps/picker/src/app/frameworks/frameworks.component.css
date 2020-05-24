@@ -8,3 +8,10 @@
   margin-top: 50px;
   /*margin: 10% 0;*/
 }
+
+@media only screen and (min-width: 768px) {
+  .platforms {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}

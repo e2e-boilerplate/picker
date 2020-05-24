@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { FrameworksComponent } from './frameworks.component';
+import { SharedModule } from '../shared/shared.module';
 
 describe('FrameworksComponent', () => {
   let component: FrameworksComponent;
@@ -9,7 +10,7 @@ describe('FrameworksComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, SharedModule],
       declarations: [FrameworksComponent],
     }).compileComponents();
   }));
