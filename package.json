@@ -59,7 +59,7 @@
     "angular-cli-ghpages": "0.6.2",
     "codelyzer": "5.2.2",
     "cypress": "4.6.0",
-    "dotenv": "6.2.0",
+    "dotenv": "8.2.0",
     "eslint": "6.8.0",
     "husky": "4.2.5",
     "jest": "25.5.4",
