@@ -1,8 +1,6 @@
 name: picker
 'on':
-  push: 
-    branches:
-      - master
+  push: null
   schedule:
     - cron: 0 5 2-31/2 * *
 jobs:
