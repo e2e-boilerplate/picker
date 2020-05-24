@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { Router } from "@angular/router";
 
 import { HomeComponent } from './home.component';
+import { MaterialModule } from '@picker/material';
 
 const mockRouter = { navigate: jasmine.createSpy('navigate')};
 
@@ -14,7 +15,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, MaterialModule],
       declarations: [HomeComponent],
       providers: [{ provide: Router, useValue: mockRouter}]
     }).compileComponents();
@@ -32,8 +33,8 @@ describe('HomeComponent', () => {
   });
 
   it('should navigate to [/platform] when Start button clicked', () => {
-    const home = fixture.debugElement.query(By.css("button"));
-    home.nativeElement.click();
+    const start = fixture.debugElement.query(By.css("button"));
+    start.nativeElement.click();
     fixture.detectChanges();
 
     expect(mockRouter.navigate).toHaveBeenCalledWith (['/platforms']);

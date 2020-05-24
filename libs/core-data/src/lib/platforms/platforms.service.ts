@@ -1,15 +1,15 @@
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, retry } from 'rxjs/operators';
 
-import { Platform } from './platform';
-import { Observable, throwError } from 'rxjs';
+import { Platform } from '@picker/core-data';
+import { API_BASE_URL } from '@picker/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlatformsService {
-  readonly BASE_URL = 'https://e2e-boilerplate.github.io/api/v1/';
+  readonly BASE_URL = API_BASE_URL;
   readonly model = 'platforms';
 
   constructor(private httpClient: HttpClient) {}

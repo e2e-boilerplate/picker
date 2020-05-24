@@ -23,5 +23,10 @@ describe('PlatformsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.title).toBe('Platform');
+  });
+
+  it('should get Observable<Platform[]>', () => {
+
   });
 });
