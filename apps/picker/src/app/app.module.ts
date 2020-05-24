@@ -5,10 +5,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ConstantsModule } from '@picker/constants';
+import { FrameworksComponent } from './frameworks/frameworks.component';
 import { HomeModule } from './home/home.module';
 import { InterceptorService } from '@picker/core-data';
 import { MaterialModule } from '@picker/material';
-import { FrameworksComponent } from './frameworks/frameworks.component';
 
 @NgModule({
   declarations: [AppComponent, FrameworksComponent],
@@ -16,6 +17,7 @@ import { FrameworksComponent } from './frameworks/frameworks.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    ConstantsModule,
     HomeModule,
     HttpClientModule,
     MaterialModule,

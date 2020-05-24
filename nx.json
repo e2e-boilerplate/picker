@@ -31,6 +31,9 @@
     },
     "core-data": {
       "tags": []
+    },
+    "constants": {
+      "tags": []
     }
   }
 }
