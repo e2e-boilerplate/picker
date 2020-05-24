@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { FrameworksComponent } from './frameworks.component';
+
+const routes: Routes = [{ path: 'frameworks/:id', component: FrameworksComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
