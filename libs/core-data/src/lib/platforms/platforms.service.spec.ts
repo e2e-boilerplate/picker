@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PlatformsService } from './platforms.service';
-import { MockPlatformService } from './platform.service.mock';
+import { MockPlatformsService } from './platforms.service.mock';
 import { platforms } from '@picker/constants';
 
 describe('PlatformsService', () => {
@@ -11,7 +11,7 @@ describe('PlatformsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [{ provide: PlatformsService, useClass: MockPlatformService }],
+      providers: [{ provide: PlatformsService, useClass: MockPlatformsService }],
     });
 
     platformsService = TestBed.inject(PlatformsService);
