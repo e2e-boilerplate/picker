@@ -2,7 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PlatformsService } from './platforms.service';
-import { platforms, MockPlatformService } from '@picker/constants';
+import { MockPlatformService } from './platform.service.mock';
+import { platforms } from '@picker/constants';
 
 describe('PlatformsService', () => {
   let platformsService: PlatformsService;
