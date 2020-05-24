@@ -6,19 +6,22 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ConstantsModule } from '@picker/constants';
-import { FrameworksComponent } from './frameworks/frameworks.component';
+import { FrameworksModule } from './frameworks/frameworks.module';
 import { HomeModule } from './home/home.module';
+import { PlatformModule } from '@angular/cdk/platform';
 import { InterceptorService } from '@picker/core-data';
 import { MaterialModule } from '@picker/material';
 
 @NgModule({
-  declarations: [AppComponent, FrameworksComponent],
+  declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
     ConstantsModule,
     HomeModule,
+    PlatformModule,
+    FrameworksModule,
     HttpClientModule,
     MaterialModule,
   ],

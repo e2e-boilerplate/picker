@@ -73,7 +73,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format:write && lint-staged",
+      "pre-commit": "lint-staged",
       "pre-push": "npm test && npm run e2e"
     }
   },

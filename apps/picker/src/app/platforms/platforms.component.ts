@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PlatformsService } from '@picker/core-data';
+import { Router } from '@angular/router';
 
 import { Platform } from '@picker/core-data';
 
@@ -12,9 +13,8 @@ import { Platform } from '@picker/core-data';
 export class PlatformsComponent implements OnInit {
   title = 'Platform';
   platforms$: Observable<Platform[]>;
-  selectedPlatform: String;
 
-  constructor(private platformsService: PlatformsService) {}
+  constructor(private platformsService: PlatformsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getPlatforms();
@@ -24,7 +24,7 @@ export class PlatformsComponent implements OnInit {
     this.platforms$ = this.platformsService.all();
   }
 
-  setSelected(id: String) {
-    this.selectedPlatform = id;
+  gotoFrameworks(id: String) {
+    this.router.navigate(['/frameworks', id]);
   }
 }
