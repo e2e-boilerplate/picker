@@ -1,20 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot, Router, RouterState, RouterStateSnapshot } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Framework } from "@picker/core-data";
+import { FrameworksService } from '@picker/core-data';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'picker-frameworks',
   templateUrl: './frameworks.component.html',
   styleUrls: ['./frameworks.component.css'],
 })
-export class FrameworksComponent implements OnInit {
-  test: RouterStateSnapshot;
+export class FrameworksComponent implements OnInit, OnDestroy {
+  title = 'Frameworks';
+  id: string;
+  private sub: any;
+  frameworks$: Observable<Framework[]>;
 
-  constructor(private router: Router) {
-    const state: RouterState = router.routerState;
-    const snapshot: RouterStateSnapshot = state.snapshot;
-    const root: ActivatedRouteSnapshot = snapshot.root;
-    this.test = snapshot;
+  constructor(private frameworksService: FrameworksService, private route: ActivatedRoute) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sub = this.route.params.subscribe(param => {
+      this.id = param['id'];
+    });
+    this.getFrameworks();
+  }
+
+  getFrameworks() {
+    this.frameworks$ = this.frameworksService.all(this.id);
+  }
+
+  gotoNext(id) {
+    return true;
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }
