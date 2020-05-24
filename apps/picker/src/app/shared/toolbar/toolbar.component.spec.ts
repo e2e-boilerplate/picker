@@ -27,7 +27,7 @@ describe('ToolbarComponent', () => {
   });
 
   it('should get title', async () => {
-    const expectedTitle = "Platform";
+    const expectedTitle = 'Platform';
     component.title = expectedTitle;
     fixture.detectChanges();
     await fixture.whenStable();

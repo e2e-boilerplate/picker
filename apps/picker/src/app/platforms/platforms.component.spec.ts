@@ -3,7 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PlatformsComponent } from './platforms.component';
 import { SharedModule } from '../shared/shared.module';
-import { Platform, PlatformsService,  } from '@picker/core-data';
+import { Platform, PlatformsService } from '@picker/core-data';
 import { platforms, MockPlatformService } from '@picker/constants';
 
 describe('PlatformsComponent', () => {
@@ -15,7 +15,7 @@ describe('PlatformsComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, SharedModule],
       declarations: [PlatformsComponent],
-      providers: [{ provide: PlatformsService, useClass: MockPlatformService }]
+      providers: [{ provide: PlatformsService, useClass: MockPlatformService }],
     }).compileComponents();
   }));
 
@@ -37,7 +37,7 @@ describe('PlatformsComponent', () => {
     fixture.detectChanges();
 
     expect(spy).toHaveBeenCalled();
-    component.platforms$.subscribe(data =>{
+    component.platforms$.subscribe((data) => {
       expect(data).toEqual(platforms);
     });
   });

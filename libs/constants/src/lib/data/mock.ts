@@ -4,6 +4,6 @@ import { platforms } from './platforms';
 
 export class MockPlatformService {
   all(): Observable<Platform[]> {
-    return of(platforms );
+    return of(platforms);
   }
 }
