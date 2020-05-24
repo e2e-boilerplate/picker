@@ -3,8 +3,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PlatformsComponent } from './platforms.component';
 import { SharedModule } from '../shared/shared.module';
-import { Platform, PlatformsService } from '@picker/core-data';
-import { platforms, MockPlatformService } from '@picker/constants';
+import { Platform, PlatformsService, MockPlatformService } from '@picker/core-data';
+import { platforms } from '@picker/constants';
 
 describe('PlatformsComponent', () => {
   let component: PlatformsComponent;
