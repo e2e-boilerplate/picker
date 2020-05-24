@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { MaterialModule } from '@picker/material';
 
-const mockRouter = { navigate: jasmine.createSpy('navigate')};
+const mockRouter = { navigate: jasmine.createSpy('navigate') };
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -17,7 +17,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, MaterialModule],
       declarations: [HomeComponent],
-      providers: [{ provide: Router, useValue: mockRouter}]
+      providers: [{ provide: Router, useValue: mockRouter }],
     }).compileComponents();
   }));
 
@@ -33,10 +33,10 @@ describe('HomeComponent', () => {
   });
 
   it('should navigate to [/platform] when Start button clicked', () => {
-    const start = fixture.debugElement.query(By.css("button"));
+    const start = fixture.debugElement.query(By.css('button'));
     start.nativeElement.click();
     fixture.detectChanges();
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith (['/platforms']);
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/platforms']);
   });
 });

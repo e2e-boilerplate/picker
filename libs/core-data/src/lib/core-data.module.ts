@@ -7,6 +7,6 @@ import { ConstantsModule } from '@picker/constants';
 
 @NgModule({
   imports: [CommonModule, ConstantsModule],
-  providers: [PlatformsService, InterceptorService]
+  providers: [PlatformsService, InterceptorService],
 })
 export class CoreDataModule {}
