@@ -25,6 +25,6 @@ export class PlatformsComponent implements OnInit {
   }
 
   gotoFrameworks(id: String) {
-    this.router.navigate(['/frameworks', id]);
+    this.router.navigate([id, 'frameworks']);
   }
 }
