@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { Framework } from "@picker/core-data";
+import { Framework } from '@picker/core-data';
 import { FrameworksService } from '@picker/core-data';
 import { Observable } from 'rxjs';
 
@@ -16,11 +16,14 @@ export class FrameworksComponent implements OnInit, OnDestroy {
   private sub: any;
   frameworks$: Observable<Framework[]>;
 
-  constructor(private frameworksService: FrameworksService, private route: ActivatedRoute) {
-  }
+  constructor(
+    private frameworksService: FrameworksService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(param => {
+    this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
     this.getFrameworks();
@@ -30,8 +33,12 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     this.frameworks$ = this.frameworksService.all(this.id);
   }
 
-  gotoNext(id) {
-    return true;
+  gotoNext(id: string) {
+    if (id === 'noframework') {
+      this.router.navigate(['/javascript', id]);
+    } else {
+      this.router.navigate(['/javascript', id]);
+    }
   }
 
   ngOnDestroy() {
