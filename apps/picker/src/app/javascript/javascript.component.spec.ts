@@ -2,29 +2,22 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { FrameworksComponent } from './frameworks.component';
+import { JavascriptComponent } from './javascript.component';
 import { SharedModule } from '../shared/shared.module';
-import { Framework, FrameworksService, FrameworksServiceMock } from '@picker/core-data';
-import { frameworks } from '@picker/constants';
 
-const mockRouter = { navigate: jasmine.createSpy('frameworks') };
-
-describe('FrameworksComponent', () => {
-  let component: FrameworksComponent;
-  let fixture: ComponentFixture<FrameworksComponent>;
+describe('JavascriptComponent', () => {
+  let component: JavascriptComponent;
+  let fixture: ComponentFixture<JavascriptComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, SharedModule, HttpClientTestingModule],
-      declarations: [FrameworksComponent],
-      providers: [
-        { provide: FrameworksService, useClass: FrameworksServiceMock}
-      ]
+      declarations: [JavascriptComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FrameworksComponent);
+    fixture = TestBed.createComponent(JavascriptComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
