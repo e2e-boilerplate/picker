@@ -1,7 +1,8 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Javascript, JavascriptService } from '@picker/core-data';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { Javascript, JavascriptService, Picks, PicksService } from '@picker/core-data';
 
 @Component({
   selector: 'picker-javascript',
@@ -13,17 +14,20 @@ export class JavascriptComponent implements OnInit, OnDestroy {
   id: string;
   private sub: any;
   javascripts$: Observable<Javascript[]>;
+  picks: Picks;
 
   constructor(
     private javascriptService: JavascriptService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private picksService: PicksService
   ) {}
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
+    this.picksService.picked.subscribe(message => this.picks = message);
     this.getJavaScripts();
   }
 
