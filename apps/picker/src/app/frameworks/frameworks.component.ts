@@ -35,9 +35,9 @@ export class FrameworksComponent implements OnInit, OnDestroy {
 
   gotoNext(id: string) {
     if (id === 'noframework') {
-      this.router.navigate(['/javascript', id]);
+      this.router.navigate([id, 'javascript']);
     } else {
-      this.router.navigate(['/javascript', id]);
+      this.router.navigate([id, 'javascript']);
     }
   }
 
