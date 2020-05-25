@@ -74,6 +74,6 @@ describe('PlatformsComponent', () => {
     elements[0].nativeElement.click();
     fixture.detectChanges();
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['id', '/frameworks']);
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['id', 'frameworks']);
   });
 });
