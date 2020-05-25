@@ -13,7 +13,6 @@ export class ToolbarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(`typeof this.picks`, typeof this.picks);
     this.filterPicks();
   }
 
