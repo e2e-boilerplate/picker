@@ -30,7 +30,6 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     });
     this.picksService.picked.subscribe(message => this.picks = message);
     this.getFrameworks();
-    this.frameworks$.subscribe(val => console.log(val));
   }
 
   getFrameworks() {
