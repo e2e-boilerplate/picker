@@ -12,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FrameworksRoutingModule,
     MaterialModule,
-    SharedModule],
-  exports: [FrameworksComponent]
+    SharedModule,
+  ],
+  exports: [FrameworksComponent],
 })
 export class FrameworksModule {}

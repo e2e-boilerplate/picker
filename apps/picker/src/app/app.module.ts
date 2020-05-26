@@ -25,7 +25,7 @@ import { MaterialModule } from '@picker/material';
     PlatformModule,
     FrameworksModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [
     {
