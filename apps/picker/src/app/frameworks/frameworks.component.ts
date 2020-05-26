@@ -54,6 +54,5 @@ export class FrameworksComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
-    this.router.onSameUrlNavigation = 'ignore';
   }
 }
