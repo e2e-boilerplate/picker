@@ -27,7 +27,7 @@ export class PlatformsComponent implements OnInit {
     this.platforms$ = this.platformsService.all();
   }
 
-  gotoFrameworks(id: String) {
+  goto(id: String) {
     this.picks.platform = <string>id;
     this.router.navigate([id, 'frameworks']);
   }

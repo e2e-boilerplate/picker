@@ -27,6 +27,7 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
+    this.router.onSameUrlNavigation = 'reload';
     this.picksService.picked.subscribe(message => this.picks = message);
     this.getFrameworks();
   }
@@ -35,11 +36,12 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     this.frameworks$ = this.frameworksService.all(this.id);
   }
 
-  gotoNext(id: string) {
+  goto(id: string) {
     this.picks.framework = <string>id;
     this.picksService.nextMessage(this.picks);
     if (id === 'noframework') {
-      this.router.navigate([id, 'javascript']);
+      id = 'none';
+      this.router.navigate([id, 'framework'],{relativeTo:this.route});
     } else {
       this.router.navigate([id, 'javascript']);
     }
@@ -47,5 +49,6 @@ export class FrameworksComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+    this.router.onSameUrlNavigation = 'ignore';
   }
 }
