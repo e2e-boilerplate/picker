@@ -7,7 +7,7 @@ import { Framework, FrameworksService, Picks, PicksService } from '@picker/core-
 @Component({
   selector: 'picker-frameworks',
   templateUrl: './frameworks.component.html',
-  styleUrls: ['./frameworks.component.css'],
+  styleUrls: ['./frameworks.component.css']
 })
 export class FrameworksComponent implements OnInit, OnDestroy {
   title = 'Frameworks';
@@ -21,15 +21,16 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private picksService: PicksService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
-    this.router.onSameUrlNavigation = 'reload';
     this.picksService.picked.subscribe(message => this.picks = message);
     this.getFrameworks();
+    this.frameworks$.subscribe(val => console.log(val));
   }
 
   getFrameworks() {
@@ -39,9 +40,9 @@ export class FrameworksComponent implements OnInit, OnDestroy {
   goto(id: string) {
     this.picks.framework = <string>id;
     this.picksService.nextMessage(this.picks);
-    if (id === 'noframework') {
-      id = 'none';
-      this.router.navigate([id, 'framework'],{relativeTo:this.route});
+    if (id === 'wofnodejs') {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+        this.router.navigate([id, 'frameworks']));
     } else {
       this.router.navigate([id, 'javascript']);
     }
