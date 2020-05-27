@@ -8,7 +8,12 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [FrameworksComponent],
-  imports: [CommonModule, FrameworksRoutingModule, MaterialModule, SharedModule],
-  exports: [FrameworksComponent]
+  imports: [
+    CommonModule,
+    FrameworksRoutingModule,
+    MaterialModule,
+    SharedModule,
+  ],
+  exports: [FrameworksComponent],
 })
 export class FrameworksModule {}

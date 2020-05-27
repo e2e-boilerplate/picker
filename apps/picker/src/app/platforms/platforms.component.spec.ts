@@ -24,7 +24,10 @@ describe('PlatformsComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule, SharedModule],
       declarations: [PlatformsComponent],
-      providers: [{ provide: PlatformsService, useClass: PlatformsServiceMock }, { provide: Router, useValue: mockRouter }],
+      providers: [
+        { provide: PlatformsService, useClass: PlatformsServiceMock },
+        { provide: Router, useValue: mockRouter },
+      ],
     }).compileComponents();
   }));
 
