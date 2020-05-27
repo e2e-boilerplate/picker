@@ -65,7 +65,7 @@ describe('PlatformsComponent', () => {
         By.css('mat-card-title')
       );
       const title = matCardTitle[0].nativeElement.textContent;
-      expect(title).toEqual(platforms[i].title);
+      expect(title).toContain(platforms[i].title);
     }
   });
 
