@@ -38,8 +38,8 @@ export class FrameworksComponent implements OnInit, OnDestroy {
   gotoNext(id: string) {
     this.picks.framework = <string>id;
     this.picksService.nextMessage(this.picks);
-    if (id === 'noframework') {
-      this.router.navigate([id, 'javascript']);
+    if (id === 'wofnodejs') {
+     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate([id, 'frameworks']));
     } else {
       this.router.navigate([id, 'javascript']);
     }
