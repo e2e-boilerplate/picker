@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ConstantsModule } from '@picker/constants';
 import { FrameworksModule } from './frameworks/frameworks.module';
 import { HomeModule } from './home/home.module';
+import { JavascriptModule } from './javascript/javascript.module';
 import { PlatformModule } from '@angular/cdk/platform';
 import { InterceptorService } from '@picker/core-data';
 import { MaterialModule } from '@picker/material';
@@ -20,6 +21,7 @@ import { MaterialModule } from '@picker/material';
     BrowserModule,
     ConstantsModule,
     HomeModule,
+    JavascriptModule,
     PlatformModule,
     FrameworksModule,
     HttpClientModule,

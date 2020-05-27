@@ -9,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import {
   Platform,
   PlatformsService,
-  MockPlatformsService,
+  PlatformsServiceMock,
 } from '@picker/core-data';
 import { platforms } from '@picker/constants';
 
@@ -24,7 +24,7 @@ describe('PlatformsComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule, SharedModule],
       declarations: [PlatformsComponent],
-      providers: [{ provide: PlatformsService, useClass: MockPlatformsService }, { provide: Router, useValue: mockRouter }],
+      providers: [{ provide: PlatformsService, useClass: PlatformsServiceMock }, { provide: Router, useValue: mockRouter }],
     }).compileComponents();
   }));
 
@@ -37,7 +37,7 @@ describe('PlatformsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    expect(component.title).toBe('Platform');
+    expect(component.title).toContain('Platform');
   });
 
   it('should get Observable<Platform[]>', () => {
@@ -66,6 +66,7 @@ describe('PlatformsComponent', () => {
       );
       const title = matCardTitle[0].nativeElement.textContent;
       expect(title).toEqual(platforms[i].title);
+      // TODO add test for all fields
     }
   });
 

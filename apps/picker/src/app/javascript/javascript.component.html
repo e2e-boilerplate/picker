@@ -1,0 +1,9 @@
+<picker-toolbar [title]="title" [picks]="picks"></picker-toolbar>
+<div class="javascript">
+  <div *ngFor="let javascript of javascripts$ | async">
+    <picker-card
+      [item]="javascript"
+      (selected)="gotoModules($event)"
+    ></picker-card>
+  </div>
+</div>

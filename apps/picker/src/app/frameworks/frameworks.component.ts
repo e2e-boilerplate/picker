@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
-import { Framework } from "@picker/core-data";
-import { FrameworksService } from '@picker/core-data';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+
+import { Framework, FrameworksService, Picks, PicksService } from '@picker/core-data';
 
 @Component({
   selector: 'picker-frameworks',
@@ -15,14 +14,20 @@ export class FrameworksComponent implements OnInit, OnDestroy {
   id: string;
   private sub: any;
   frameworks$: Observable<Framework[]>;
+  picks: Picks;
 
-  constructor(private frameworksService: FrameworksService, private route: ActivatedRoute) {
-  }
+  constructor(
+    private frameworksService: FrameworksService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private picksService: PicksService
+  ) {}
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(param => {
+    this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
+    this.picksService.picked.subscribe(message => this.picks = message);
     this.getFrameworks();
   }
 
@@ -30,8 +35,14 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     this.frameworks$ = this.frameworksService.all(this.id);
   }
 
-  gotoNext(id) {
-    return true;
+  gotoNext(id: string) {
+    this.picks.framework = <string>id;
+    this.picksService.nextMessage(this.picks);
+    if (id === 'noframework') {
+      this.router.navigate([id, 'javascript']);
+    } else {
+      this.router.navigate([id, 'javascript']);
+    }
   }
 
   ngOnDestroy() {
