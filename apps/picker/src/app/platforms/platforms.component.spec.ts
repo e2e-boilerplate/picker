@@ -65,16 +65,15 @@ describe('PlatformsComponent', () => {
         By.css('mat-card-title')
       );
       const title = matCardTitle[0].nativeElement.textContent;
-      expect(title).toEqual(platforms[i].title);
-      // TODO add test for all fields
+      expect(title).toContain(platforms[i].title);
     }
   });
 
-  it('should navigate to [/frameworks/:id] when Select button clicked', () => {
+  it('should navigate to [id/frameworks] when Select button clicked', () => {
     const elements = fixture.debugElement.queryAll(By.css('button'));
     elements[0].nativeElement.click();
     fixture.detectChanges();
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/frameworks', 'id']);
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['id', 'frameworks']);
   });
 });
