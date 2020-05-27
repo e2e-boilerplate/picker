@@ -2,7 +2,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { Framework, FrameworksService, Picks, PicksService } from '@picker/core-data';
+import {
+  Framework,
+  FrameworksService,
+  Picks,
+  PicksService,
+} from '@picker/core-data';
 
 @Component({
   selector: 'picker-frameworks',
@@ -27,7 +32,7 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
-    this.picksService.picked.subscribe(message => this.picks = message);
+    this.picksService.picked.subscribe((message) => (this.picks = message));
     this.getFrameworks();
   }
 
@@ -35,11 +40,13 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     this.frameworks$ = this.frameworksService.all(this.id);
   }
 
-  gotoNext(id: string) {
+  goto(id: string) {
     this.picks.framework = <string>id;
     this.picksService.nextMessage(this.picks);
-    if (id === 'noframework') {
-      this.router.navigate([id, 'javascript']);
+    if (id === 'wofnodejs') {
+      this.router
+        .navigateByUrl('/', { skipLocationChange: true })
+        .then(() => this.router.navigate([id, 'frameworks']));
     } else {
       this.router.navigate([id, 'javascript']);
     }

@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { Picks, PicksService, Platform, PlatformsService } from '@picker/core-data';
+import {
+  Picks,
+  PicksService,
+  Platform,
+  PlatformsService,
+} from '@picker/core-data';
 import { pick } from '@picker/constants';
 
 @Component({
@@ -15,11 +20,15 @@ export class PlatformsComponent implements OnInit {
   platforms$: Observable<Platform[]>;
   picks: Picks;
 
-  constructor(private platformsService: PlatformsService, private router: Router, private picksService: PicksService) {}
+  constructor(
+    private platformsService: PlatformsService,
+    private router: Router,
+    private picksService: PicksService
+  ) {}
 
   ngOnInit(): void {
     this.picksService.nextMessage(pick);
-    this.picksService.picked.subscribe(message => this.picks = message);
+    this.picksService.picked.subscribe((message) => (this.picks = message));
     this.getPlatforms();
   }
 
@@ -27,7 +36,7 @@ export class PlatformsComponent implements OnInit {
     this.platforms$ = this.platformsService.all();
   }
 
-  gotoFrameworks(id: String) {
+  goto(id: String) {
     this.picks.platform = <string>id;
     this.router.navigate([id, 'frameworks']);
   }

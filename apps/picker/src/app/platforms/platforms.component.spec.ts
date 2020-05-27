@@ -24,7 +24,10 @@ describe('PlatformsComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule, SharedModule],
       declarations: [PlatformsComponent],
-      providers: [{ provide: PlatformsService, useClass: PlatformsServiceMock }, { provide: Router, useValue: mockRouter }],
+      providers: [
+        { provide: PlatformsService, useClass: PlatformsServiceMock },
+        { provide: Router, useValue: mockRouter },
+      ],
     }).compileComponents();
   }));
 
@@ -69,7 +72,7 @@ describe('PlatformsComponent', () => {
     }
   });
 
-  it('should navigate to [/frameworks/:id] when Select button clicked', () => {
+  it('should navigate to [id/frameworks] when Select button clicked', () => {
     const elements = fixture.debugElement.queryAll(By.css('button'));
     elements[0].nativeElement.click();
     fixture.detectChanges();

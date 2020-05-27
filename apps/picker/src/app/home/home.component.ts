@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  gotoPlatform() {
+  goto() {
     this.router.navigate(['/platforms']);
   }
 }
