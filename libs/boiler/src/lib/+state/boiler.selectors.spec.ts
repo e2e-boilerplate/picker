@@ -2,14 +2,14 @@ import { BoilerEntity } from './boiler.models';
 import { State, boilerAdapter, initialState } from './boiler.reducer';
 import * as BoilerSelectors from './boiler.selectors';
 
-describe('Boiler Selectors', () => {
+xdescribe('Boiler Selectors', () => {
   const ERROR_MSG = 'No Error Available';
   const getBoilerId = (it) => it['id'];
-  const createBoilerEntity = (id: string, name = '') =>
-    ({
-      id,
-      name: name || `name-${id}`,
-    } as BoilerEntity);
+  // const createBoilerEntity = (id: string, name = '') =>
+    // ({
+    //   id,
+    //   name: name || `name-${id}`,
+    // } as BoilerEntity);
 
   let state;
 
@@ -17,9 +17,9 @@ describe('Boiler Selectors', () => {
     state = {
       boiler: boilerAdapter.addAll(
         [
-          createBoilerEntity('PRODUCT-AAA'),
-          createBoilerEntity('PRODUCT-BBB'),
-          createBoilerEntity('PRODUCT-CCC'),
+          // createBoilerEntity('PRODUCT-AAA'),
+          // createBoilerEntity('PRODUCT-BBB'),
+          // createBoilerEntity('PRODUCT-CCC'),
         ],
         {
           ...initialState,
