@@ -12,6 +12,11 @@ import { JavascriptModule } from './javascript/javascript.module';
 import { PlatformModule } from '@angular/cdk/platform';
 import { InterceptorService } from '@picker/core-data';
 import { MaterialModule } from '@picker/material';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { BoilerModule } from '@picker/boiler';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,13 +31,26 @@ import { MaterialModule } from '@picker/material';
     FrameworksModule,
     HttpClientModule,
     MaterialModule,
+    BoilerModule,
+    StoreModule.forRoot(
+      {},
+      {
+        metaReducers: !environment.production ? [] : [],
+        runtimeChecks: {
+          strictActionImmutability: true,
+          strictStateImmutability: true,
+        },
+      }
+    ),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
       multi: true,
-    },
+    }
   ],
   bootstrap: [AppComponent],
 })
