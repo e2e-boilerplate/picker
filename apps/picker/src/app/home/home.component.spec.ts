@@ -8,7 +8,7 @@ import { MaterialModule } from '@picker/material';
 
 const mockRouter = { navigate: jasmine.createSpy('navigate') };
 
-describe('HomeComponent', () => {
+xdescribe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let compiled: any;

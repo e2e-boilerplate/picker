@@ -2,12 +2,12 @@ import { BoilerEntity } from './boiler.models';
 import * as BoilerActions from './boiler.actions';
 import { State, initialState, reducer } from './boiler.reducer';
 
-describe('Boiler Reducer', () => {
+xdescribe('Boiler Reducer', () => {
   const createBoilerEntity = (id: string, name = '') =>
-    ({
-      id,
-      name: name || `name-${id}`,
-    } as BoilerEntity);
+    // ({
+    //   id,
+    //   name: name || `name-${id}`,
+    // } as BoilerEntity);
 
   beforeEach(() => {});
 
