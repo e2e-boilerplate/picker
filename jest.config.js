@@ -8,12 +8,12 @@ module.exports = {
   resolver: '@nrwl/jest/plugins/resolver',
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageReporters: ['json', 'text'],
-  // coverageThreshold: {
-  //   global: {
-  //     branches: 0,
-  //     functions: 0,
-  //     lines: 0,
-  //     statements: -10,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0,
+    },
+  },
 };
