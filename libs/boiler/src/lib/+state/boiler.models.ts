@@ -4,4 +4,5 @@
 export interface BoilerEntity {
   platform: string | null;
   framework: string | null;
+  javascript: string | null;
 }
