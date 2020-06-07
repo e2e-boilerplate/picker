@@ -5,9 +5,8 @@ import { Observable } from 'rxjs';
 import {
   Framework,
   FrameworksService,
-  Picks,
-  PicksService,
 } from '@picker/core-data';
+import { BoilerFacade } from '@picker/boiler';
 
 @Component({
   selector: 'picker-frameworks',
@@ -19,20 +18,19 @@ export class FrameworksComponent implements OnInit, OnDestroy {
   id: string;
   private sub: any;
   frameworks$: Observable<Framework[]>;
-  picks: Picks;
 
   constructor(
     private frameworksService: FrameworksService,
     private route: ActivatedRoute,
     private router: Router,
-    private picksService: PicksService
+    private facade: BoilerFacade
   ) {}
 
   ngOnInit(): void {
+    this.facade.updateBoiler({framework: null})
     this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
-    this.picksService.picked.subscribe((message) => (this.picks = message));
     this.getFrameworks();
   }
 
@@ -41,13 +39,12 @@ export class FrameworksComponent implements OnInit, OnDestroy {
   }
 
   goto(id: string) {
-    this.picks.framework = <string>id;
-    this.picksService.nextMessage(this.picks);
     if (id === 'wofnodejs') {
       this.router
         .navigateByUrl('/', { skipLocationChange: true })
         .then(() => this.router.navigate([id, 'frameworks']));
     } else {
+      this.facade.updateBoiler({framework: id});
       this.router.navigate([id, 'javascript']);
     }
   }

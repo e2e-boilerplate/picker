@@ -3,4 +3,5 @@
  */
 export interface BoilerEntity {
   platform: string | number;
+  framework: string | number;
 }

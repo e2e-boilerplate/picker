@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BoilerFacade } from '@picker/boiler';
 
 @Component({
   selector: 'picker-toolbar',
@@ -7,22 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
   @Input() title;
-  @Input() picks;
-  picked: Array<string> = [];
+  boiled$;
 
-  constructor() {}
+  constructor( private facade: BoilerFacade) {}
 
   ngOnInit(): void {
-    this.filterPicks();
-  }
-
-  filterPicks() {
-    if(this.picks) {
-      for (const pick in this.picks) {
-        if (this.picks.hasOwnProperty(pick) && this.picks[pick] !== '') {
-          this.picked.push(this.picks[pick]);
-        }
-      }
-    }
+    this.boiled$ = this.facade.boiled;
   }
 }

@@ -5,7 +5,7 @@ import * as BoilerActions from './boiler.actions';
 
 @Injectable()
 export class BoilerFacade {
-  boiler$ = this.store.select(getBoiled);
+  boiled = this.store.select(getBoiled);
 
   constructor(private store: Store<any>){}
 

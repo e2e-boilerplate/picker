@@ -23,7 +23,8 @@ export const initialState: State = boilerAdapter.getInitialState({
   // set initial required properties
   loaded: false,
   data: {
-    platform: null
+    platform: null,
+    framework: null,
   }
 });
 
