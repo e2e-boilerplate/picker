@@ -17,9 +17,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getVersion();
-    this.version$.subscribe(value => {
-      console.log(`v: ${JSON.stringify(value)}`);
-    });
   }
 
   selectedItem(value: String) {

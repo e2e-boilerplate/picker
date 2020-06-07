@@ -215,6 +215,38 @@
         }
       },
       "schematics": {}
+    },
+    "boiler": {
+      "projectType": "library",
+      "root": "libs/boiler",
+      "sourceRoot": "libs/boiler/src",
+      "prefix": "picker",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/boiler/tsconfig.lib.json",
+              "libs/boiler/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/boiler/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/boiler/jest.config.js",
+            "tsConfig": "libs/boiler/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/boiler/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -5,6 +5,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FrameworksComponent } from './frameworks.component';
 import { SharedModule } from '../shared/shared.module';
 import { Framework, FrameworksService, FrameworksServiceMock } from '@picker/core-data';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
 import { frameworks } from '@picker/constants';
 
 const mockRouter = { navigate: jasmine.createSpy('frameworks') };
@@ -18,7 +19,8 @@ describe('FrameworksComponent', () => {
       imports: [RouterTestingModule, SharedModule, HttpClientTestingModule],
       declarations: [FrameworksComponent],
       providers: [
-        { provide: FrameworksService, useClass: FrameworksServiceMock}
+        { provide: FrameworksService, useClass: FrameworksServiceMock},
+        { provide: BoilerFacade, useClass: BoilerFacadeMock}
       ]
     }).compileComponents();
   }));

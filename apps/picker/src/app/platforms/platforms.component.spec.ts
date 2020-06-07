@@ -12,6 +12,7 @@ import {
   PlatformsServiceMock,
 } from '@picker/core-data';
 import { platforms } from '@picker/constants';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
 
 const mockRouter = { navigate: jasmine.createSpy('navigate') };
 
@@ -27,6 +28,7 @@ describe('PlatformsComponent', () => {
       providers: [
         { provide: PlatformsService, useClass: PlatformsServiceMock },
         { provide: Router, useValue: mockRouter },
+        { provide: BoilerFacade, useClass: BoilerFacadeMock }
       ],
     }).compileComponents();
   }));

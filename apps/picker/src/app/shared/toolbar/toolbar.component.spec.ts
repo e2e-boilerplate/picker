@@ -3,6 +3,7 @@ import { By } from '@angular/platform-browser';
 
 import { ToolbarComponent } from './toolbar.component';
 import { MaterialModule } from '@picker/material';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -12,6 +13,7 @@ describe('ToolbarComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ToolbarComponent],
       imports: [MaterialModule],
+      providers: [{ provide: BoilerFacade, useClass: BoilerFacadeMock }]
     }).compileComponents();
   }));
 

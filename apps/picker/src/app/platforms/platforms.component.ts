@@ -3,12 +3,10 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 import {
-  Picks,
-  PicksService,
   Platform,
   PlatformsService,
 } from '@picker/core-data';
-import { pick } from '@picker/constants';
+import { BoilerFacade } from '@picker/boiler';
 
 @Component({
   selector: 'picker-platforms',
@@ -18,17 +16,15 @@ import { pick } from '@picker/constants';
 export class PlatformsComponent implements OnInit {
   title = 'Platform';
   platforms$: Observable<Platform[]>;
-  picks: Picks;
 
   constructor(
     private platformsService: PlatformsService,
     private router: Router,
-    private picksService: PicksService
+    private boilerFacade: BoilerFacade
   ) {}
 
   ngOnInit(): void {
-    this.picksService.nextMessage(pick);
-    this.picksService.picked.subscribe((message) => (this.picks = message));
+    this.boilerFacade.updateBoiler({ platform: null});
     this.getPlatforms();
   }
 
@@ -37,7 +33,7 @@ export class PlatformsComponent implements OnInit {
   }
 
   goto(id: String) {
-    this.picks.platform = <string>id;
+    this.boilerFacade.updateBoiler({ platform: id});
     this.router.navigate([id, 'frameworks']);
   }
 }
