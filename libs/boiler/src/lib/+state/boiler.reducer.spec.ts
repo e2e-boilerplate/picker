@@ -9,7 +9,8 @@ describe('Boiler Reducer', () => {
       const actual: State = reducer(initialState, action);
       const expected = {
         framework: null,
-        platform: null
+        platform: null,
+        javascript: null,
       };
 
       expect(actual.data).toEqual(expected);
@@ -21,7 +22,8 @@ describe('Boiler Reducer', () => {
       const actual: State = reducer(initialState, action);
       const expected = {
         framework: null,
-        platform: 'nodejs'
+        platform: 'nodejs',
+        javascript: null,
       };
 
       expect(actual.data).toEqual(expected);
