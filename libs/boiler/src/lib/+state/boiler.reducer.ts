@@ -37,10 +37,6 @@ const boilerReducer = createReducer(
       data: { ...state.data, ...item }
     })
   ),
-  on(BoilerActions.name, (state) => ({
-    ...state,
-    name: `${state.data.framework}`
-  })),
 );
 
 export function reducer(state: State | undefined, action: Action) {
