@@ -23,11 +23,11 @@ export class FrameworksComponent implements OnInit, OnDestroy {
     private frameworksService: FrameworksService,
     private route: ActivatedRoute,
     private router: Router,
-    private facade: BoilerFacade
+    private boilerFacade: BoilerFacade
   ) {}
 
   ngOnInit(): void {
-    this.facade.updateBoiler({framework: null})
+    this.boilerFacade.updateBoiler({framework: null})
     this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
@@ -44,7 +44,7 @@ export class FrameworksComponent implements OnInit, OnDestroy {
         .navigateByUrl('/', { skipLocationChange: true })
         .then(() => this.router.navigate([id, 'frameworks']));
     } else {
-      this.facade.updateBoiler({framework: id});
+      this.boilerFacade.updateBoiler({framework: id});
       this.router.navigate([id, 'javascript']);
     }
   }

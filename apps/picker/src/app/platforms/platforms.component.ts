@@ -20,11 +20,11 @@ export class PlatformsComponent implements OnInit {
   constructor(
     private platformsService: PlatformsService,
     private router: Router,
-    private facade: BoilerFacade
+    private boilerFacade: BoilerFacade
   ) {}
 
   ngOnInit(): void {
-    this.facade.updateBoiler({ platform: null});
+    this.boilerFacade.updateBoiler({ platform: null});
     this.getPlatforms();
   }
 
@@ -33,7 +33,7 @@ export class PlatformsComponent implements OnInit {
   }
 
   goto(id: String) {
-    this.facade.updateBoiler({ platform: id});
+    this.boilerFacade.updateBoiler({ platform: id});
     this.router.navigate([id, 'frameworks']);
   }
 }

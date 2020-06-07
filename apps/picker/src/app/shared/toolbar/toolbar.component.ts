@@ -10,9 +10,9 @@ export class ToolbarComponent implements OnInit {
   @Input() title;
   boiled$;
 
-  constructor( private facade: BoilerFacade) {}
+  constructor( private boilerFacade: BoilerFacade) {}
 
   ngOnInit(): void {
-    this.boiled$ = this.facade.boiled;
+    this.boiled$ = this.boilerFacade.boiled;
   }
 }
