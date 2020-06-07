@@ -5,7 +5,7 @@
   </mat-toolbar-row>
 
   <mat-toolbar-row>
-    <span id="picks" *ngIf="boiled$" style='font-size:75%;'>{{ boiled$ | async | json }}</span>
+    <span id="picks" *ngIf="name" style='font-size:75%; color: crimson;'>{{name}}</span>
     <span class="spacer"></span>
   </mat-toolbar-row>
 </mat-toolbar>

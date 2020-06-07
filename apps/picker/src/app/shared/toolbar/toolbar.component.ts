@@ -10,10 +10,19 @@ import { Observable } from 'rxjs';
 export class ToolbarComponent implements OnInit {
   @Input() title;
   boiled$: Observable<any>;
+  name: string;
 
   constructor(private boilerFacade: BoilerFacade) {}
 
   ngOnInit(): void {
     this.boiled$ = this.boilerFacade.boiled;
+    this.getName();
+  }
+
+  getName(): void {
+    this.boiled$.subscribe( msg => {
+      const value = (Object.values(msg)).filter(m => m !== null);
+      this.name = value.join('-');
+    })
   }
 }

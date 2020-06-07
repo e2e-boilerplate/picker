@@ -27,4 +27,12 @@ export class RepositoriesService {
         map(items => items.filter(item => item.startsWith(start)))
       );
   }
+
+  getRepoNotStartWith(start): Observable<any> {
+    return this.httpClient
+      .get<any>(`${this.BASE_URL}${this.model}.json`)
+      .pipe(
+        map(items => items.filter(item => !item.startsWith(start)))
+      );
+  }
 }
