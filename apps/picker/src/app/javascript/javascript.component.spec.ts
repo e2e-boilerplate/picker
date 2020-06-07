@@ -4,6 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { JavascriptComponent } from './javascript.component';
 import { SharedModule } from '../shared/shared.module';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
 
 describe('JavascriptComponent', () => {
   let component: JavascriptComponent;
@@ -13,6 +14,7 @@ describe('JavascriptComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, SharedModule, HttpClientTestingModule],
       declarations: [JavascriptComponent],
+      providers: [{ provide: BoilerFacade, useClass: BoilerFacadeMock}]
     }).compileComponents();
   }));
 
