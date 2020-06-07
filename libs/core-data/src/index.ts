@@ -12,6 +12,8 @@ export { Platform } from './lib/platforms/platform';
 export { PlatformsService } from './lib/platforms/platforms.service';
 export { PlatformsServiceMock } from './lib/platforms/platforms.service.mock';
 
+export { RepositoriesService } from './lib/repositories/repositories.service';
+
 export { InterceptorService } from './lib/interceptor/interceptor.service';
 
 export { VersionService } from './lib/version/version.service';

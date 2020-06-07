@@ -6,6 +6,8 @@ import { FrameworksService } from './frameworks/frameworks.service';
 import { JavascriptService } from './javascript/javascript.service';
 import { PlatformsService } from './platforms/platforms.service';
 import { InterceptorService } from './interceptor/interceptor.service';
+import { RepositoriesService } from './repositories/repositories.service';
+import { VersionService } from './version/version.service';
 
 @NgModule({
   imports: [CommonModule, ConstantsModule],
@@ -14,6 +16,8 @@ import { InterceptorService } from './interceptor/interceptor.service';
     JavascriptService,
     InterceptorService,
     PlatformsService,
+    RepositoriesService,
+    VersionService,
   ],
 })
 export class CoreDataModule {}

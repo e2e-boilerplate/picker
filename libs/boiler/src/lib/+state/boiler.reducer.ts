@@ -8,6 +8,8 @@ export const BOILER_FEATURE_KEY = 'boiler';
 
 export interface State extends EntityState<BoilerEntity> {
   data: BoilerEntity;
+  name: string | null;
+  platform: string | null;
 }
 
 export interface BoilerPartialState {
@@ -20,7 +22,9 @@ export const initialState: State = boilerAdapter.getInitialState({
   data: {
     platform: null,
     framework: null,
-  }
+  },
+  name: null,
+  platform: null,
 });
 
 const boilerReducer = createReducer(
@@ -33,6 +37,10 @@ const boilerReducer = createReducer(
       data: { ...state.data, ...item }
     })
   ),
+  on(BoilerActions.name, (state) => ({
+    ...state,
+    name: `${state.data.framework}`
+  })),
 );
 
 export function reducer(state: State | undefined, action: Action) {
