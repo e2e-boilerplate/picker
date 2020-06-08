@@ -1,9 +1,10 @@
 div.footer {
   text-align: justify-all;
-  margin: 70px;
+  margin: 30px;
 }
 
 p {
   line-height: 90%;
   color: #999999;
+  font-size: smaller;
 }

@@ -5,10 +5,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ConstantsModule } from '@picker/constants';
 import { FrameworksModule } from './frameworks/frameworks.module';
 import { HomeModule } from './home/home.module';
 import { JavascriptModule } from './javascript/javascript.module';
+import { ModuleModule } from './module/module.module';
+import { ConstantsModule } from '@picker/constants';
 import { PlatformModule } from '@angular/cdk/platform';
 import { InterceptorService } from '@picker/core-data';
 import { MaterialModule } from '@picker/material';
@@ -25,6 +26,7 @@ import { BoilerModule } from '@picker/boiler';
     BrowserAnimationsModule,
     BrowserModule,
     ConstantsModule,
+    ModuleModule,
     HomeModule,
     JavascriptModule,
     PlatformModule,

@@ -3,7 +3,7 @@
   <div *ngFor="let javascript of javascripts$ | async">
     <picker-card
       [item]="javascript"
-      (selected)="gotoModules($event)"
+      (selected)="goto($event)"
     ></picker-card>
   </div>
 </div>
