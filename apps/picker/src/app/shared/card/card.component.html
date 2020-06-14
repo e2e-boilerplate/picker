@@ -1,6 +1,5 @@
 <mat-card>
   <mat-card-header>
-    <div mat-card-avatar></div>
     <mat-card-title *ngIf="item.title">{{ item.title }} {{ version$ | async }}</mat-card-title>
     <mat-card-subtitle *ngIf="item.subtitle">{{
       item.subtitle

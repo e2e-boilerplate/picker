@@ -21,7 +21,7 @@ export class FooterComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.boiled$ = this.boilerFacade.boiled;
+    this.boiled$ = this.boilerFacade.boiled$;
     this.getRepositories();
     this.getName();
     this.getFiltered();

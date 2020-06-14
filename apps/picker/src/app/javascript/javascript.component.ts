@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Javascript, JavascriptService } from '@picker/core-data';
+import { BoilerFacade } from '@picker/boiler';
 
 @Component({
   selector: 'picker-javascript',
@@ -14,8 +15,11 @@ export class JavascriptComponent implements OnInit, OnDestroy {
   id: string;
   private sub: any;
   javascripts$: Observable<Javascript[]>;
+  boiled$: Observable<any>;
+  path: string;
 
   constructor(
+    private boilerFacade: BoilerFacade,
     private javascriptService: JavascriptService,
     private route: ActivatedRoute,
     private router: Router,
@@ -25,11 +29,14 @@ export class JavascriptComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe((param) => {
       this.id = param['id'];
     });
+    this.boilerFacade.buildPath();
+    this.boilerFacade.path$.subscribe( value => { this.path = value });
+
     this.getJavaScripts();
   }
 
   getJavaScripts() {
-    this.javascripts$ = this.javascriptService.all();
+    this.javascripts$ = this.javascriptService.get(this.path);
   }
 
   gotoModules(value: string) {

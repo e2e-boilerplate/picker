@@ -1,7 +1,6 @@
-export { API_BASE_URL, UTILS_BASE_URL, randomize } from './lib/data/common';
-export { platform, platforms } from './lib/data/platforms';
-export { framework, frameworks } from './lib/data/frameworks';
-export { javascript, javascripts } from './lib/data/javascript';
-export { pick } from './lib/data/pick';
-
-export { ConstantsModule } from './lib/constants.module';
+export * from './lib/data/common';
+export * from './lib/data/platforms';
+export * from './lib/data/frameworks';
+export * from './lib/data/javascript';
+export * from './lib/data/pick';
+export * from './lib/constants.module';
