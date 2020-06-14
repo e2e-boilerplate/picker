@@ -10,13 +10,13 @@ import { API_BASE_URL } from '@picker/constants';
 })
 export class FrameworksService {
   readonly BASE_URL = API_BASE_URL;
-  readonly model = 'frameworks';
+  readonly model = 'platforms';
 
   constructor(private httpClient: HttpClient) {}
 
   all(type: string): Observable<Framework[]> {
     return this.httpClient.get<Framework[]>(
-      `${this.BASE_URL}${this.model}/${type}.json`
+      `${this.BASE_URL}${this.model}/${type}/index.json`
     );
   }
 }

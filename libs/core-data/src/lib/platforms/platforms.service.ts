@@ -16,7 +16,7 @@ export class PlatformsService {
 
   all(): Observable<Platform[]> {
     return this.httpClient.get<Platform[]>(
-      `${this.BASE_URL}${this.model}.json`
+      `${this.BASE_URL}${this.model}/index.json`
     );
   }
 }
