@@ -5,6 +5,14 @@
 }
 
 .mat-card-avatar {
-  background-color: crimson;
+  background-color: #2c2c2c;
   background-size: cover;
+}
+
+.mat-card-avatar:hover {
+  background-color: crimson;
+}
+
+.mat-button:hover {
+  color: crimson
 }
