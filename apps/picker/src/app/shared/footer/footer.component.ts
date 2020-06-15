@@ -12,8 +12,8 @@ import { BoilerFacade } from '@picker/boiler';
 export class FooterComponent implements OnInit {
   repositories$: Observable<any>;
   boiled$: Observable<any>;
-  name: string;
   list$: Observable<any>;
+  name: string;
 
   constructor(
     private repositoriesService: RepositoriesService,
