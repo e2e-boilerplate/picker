@@ -39,11 +39,11 @@ export class FrameworksComponent implements OnInit, OnDestroy {
   }
 
   goto(id: string) {
-    if (id === 'wofnodejs') {
+    if (id === 'no_framework') {
       this.boilerFacade.updateBoiler({framework: null});
       this.router
         .navigateByUrl('/', { skipLocationChange: true })
-        .then(() => this.router.navigate([id, 'frameworks']));
+        .then(() => this.router.navigate([id, 'no_frameworks']));
     } else {
       this.boilerFacade.updateBoiler({framework: id});
       this.router.navigate([id, 'javascript']);

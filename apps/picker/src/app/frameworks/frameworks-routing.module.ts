@@ -5,7 +5,7 @@ import { FrameworksComponent } from './frameworks.component';
 
 const routes: Routes = [
   { path: ':id/frameworks', component: FrameworksComponent },
-  { path: ':id/no-frameworks', component: FrameworksComponent },
+  { path: ':id/no_frameworks', component: FrameworksComponent },
 ];
 
 @NgModule({
