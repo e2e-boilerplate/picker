@@ -51,8 +51,8 @@
     "@ngrx/router-store": "9.2.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.901.8",
-    "@angular/cli": "9.1.8",
+    "@angular-devkit/build-angular": "0.901.9",
+    "@angular/cli": "9.1.9",
     "@angular/compiler-cli": "9.1.11",
     "@angular/language-service": "9.1.11",
     "@nrwl/cypress": "9.4.3",
