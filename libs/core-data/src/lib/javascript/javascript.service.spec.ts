@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { JavascriptService } from './javascript.service';
 
-describe('JavascriptService', () => {
+xdescribe('JavascriptService', () => {
   let service: JavascriptService;
 
   beforeEach(() => {
