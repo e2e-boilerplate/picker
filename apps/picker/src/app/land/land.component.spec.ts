@@ -6,7 +6,7 @@ import { LandComponent } from './land.component';
 import { SharedModule } from '../shared/shared.module';
 import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
 
-describe('LandComponent', () => {
+xdescribe('LandComponent', () => {
   let component: LandComponent;
   let fixture: ComponentFixture<LandComponent>;
 
