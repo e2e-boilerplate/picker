@@ -4,6 +4,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { LandComponent } from './land.component';
 import { SharedModule } from '../shared/shared.module';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
+import { FrameworksService, FrameworksServiceMock } from '@picker/core-data';
 
 describe('LandComponent', () => {
   let component: LandComponent;
@@ -12,7 +14,10 @@ describe('LandComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, SharedModule, HttpClientTestingModule],
-      declarations: [ LandComponent ]
+      declarations: [ LandComponent ],
+      providers: [
+        { provide: BoilerFacade, useClass: BoilerFacadeMock}
+      ]
     })
     .compileComponents();
   }));
