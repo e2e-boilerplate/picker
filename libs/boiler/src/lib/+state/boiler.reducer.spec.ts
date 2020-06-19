@@ -24,6 +24,7 @@ describe('Boiler Reducer', () => {
         framework: null,
         platform: 'nodejs',
         javascript: null,
+        land: null,
       };
 
       expect(actual.data).toEqual(expected);
