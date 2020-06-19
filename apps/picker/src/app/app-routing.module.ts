@@ -11,6 +11,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./platforms/platforms.module').then((m) => m.PlatformsModule),
   },
+  {
+    path: 'land',
+    loadChildren: () =>
+      import('./land/land.module').then((m) => m.LandModule),
+  },
 ];
 
 @NgModule({

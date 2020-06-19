@@ -8,6 +8,7 @@ import { PlatformsService } from './platforms/platforms.service';
 import { InterceptorService } from './interceptor/interceptor.service';
 import { RepositoriesService } from './repositories/repositories.service';
 import { VersionService } from './version/version.service';
+import { LandService } from './land/land.service';
 
 @NgModule({
   imports: [CommonModule, ConstantsModule],
@@ -18,6 +19,7 @@ import { VersionService } from './version/version.service';
     PlatformsService,
     RepositoriesService,
     VersionService,
+    LandService,
   ],
 })
 export class CoreDataModule {}

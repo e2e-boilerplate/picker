@@ -17,3 +17,6 @@ export { RepositoriesService } from './lib/repositories/repositories.service';
 export { InterceptorService } from './lib/interceptor/interceptor.service';
 
 export { VersionService } from './lib/version/version.service';
+
+export * from './lib/land/land';
+export * from './lib/land/land.service';

@@ -21,6 +21,7 @@ export const boilerAdapter: EntityAdapter<BoilerEntity> = createEntityAdapter<Bo
 export const initialState: State = boilerAdapter.getInitialState({
   data: {
     platform: null,
+    land: null,
     framework: null,
     javascript: null
   },
@@ -39,15 +40,15 @@ const boilerReducer = createReducer(
     })
   ),
   on(BoilerActions.path, (state) => {
-    const value = (Object.values(state.data)).filter(data => data !== "null");
-    const path = (value.join('/')).replace("//", "/");
+    const value = (Object.values(state.data)).filter(data => data);
+    const path = (value.join('/'));
     return {
       ...state,
       path
     };
   }),
   on(BoilerActions.header, (state) => {
-    const value = (Object.values(state.data)).filter(data => data !== "null");
+    const value = (Object.values(state.data)).filter(data => data);
     const header = value.join(' ');
     return {
       ...state,

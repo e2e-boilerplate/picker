@@ -34,6 +34,6 @@ export class PlatformsComponent implements OnInit {
 
   goto(id: String) {
     this.boilerFacade.updateBoiler({ platform: id});
-    this.router.navigate([id, 'frameworks']);
+    this.router.navigate(['/land']);
   }
 }
