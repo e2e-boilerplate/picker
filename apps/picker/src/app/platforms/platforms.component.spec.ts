@@ -74,11 +74,11 @@ describe('PlatformsComponent', () => {
     }
   });
 
-  it('should navigate to [id/frameworks] when Select button clicked', () => {
+  it('should navigate to [land] when Select button clicked', () => {
     const elements = fixture.debugElement.queryAll(By.css('button'));
     elements[0].nativeElement.click();
     fixture.detectChanges();
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['id', 'frameworks']);
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/land']);
   });
 });
