@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-
-import { Platform, VersionService } from '@picker/core-data';
 import { Observable } from 'rxjs';
+
+import { VersionService } from '@picker/core-data';
+import { ISummaryCard } from '@picker/constants';
 
 @Component({
   selector: 'picker-card',
@@ -9,9 +10,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Input() item: Platform;
+  @Input() item: ISummaryCard;
   @Output() selected = new EventEmitter<String>();
-  version$: Observable<any>;
+  version$: Observable<string>;
 
   constructor(private versionService: VersionService) {}
 
@@ -19,11 +20,11 @@ export class CardComponent implements OnInit {
     this.getVersion();
   }
 
-  selectedItem(value: String) {
-    this.selected.emit(value);
+  getVersion(): void {
+    this.version$ = this.versionService.get(this.item.id);
   }
 
-  getVersion() {
-    this.version$ = this.versionService.get(this.item.id);
+  selectedItem(value: String): void {
+    this.selected.emit(value);
   }
 }

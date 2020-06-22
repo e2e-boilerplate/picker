@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LandComponent } from './land.component';
+import { FrameworkComponent } from './framework.component';
 
-const routes: Routes = [{ path: '', component: LandComponent }];
+
+const routes: Routes = [{ path: '', component: FrameworkComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class LandRoutingModule { }
+export class FrameworkRoutingModule { }

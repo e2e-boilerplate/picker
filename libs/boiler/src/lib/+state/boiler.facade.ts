@@ -15,6 +15,10 @@ export class BoilerFacade {
     this.store.dispatch(BoilerActions.update({item}));
   }
 
+  resetBoiler() {
+    this.store.dispatch(BoilerActions.reset());
+  }
+
   buildHeader() {
     this.store.dispatch(BoilerActions.header());
   }

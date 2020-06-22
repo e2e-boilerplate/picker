@@ -6,6 +6,7 @@ export class BoilerFacadeMock {
   header$ = of({});
 
   updateBoiler() {}
+  resetBoiler() {}
   buildHeader() {}
   buildPath() {}
 }

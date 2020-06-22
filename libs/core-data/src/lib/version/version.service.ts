@@ -12,7 +12,7 @@ export class VersionService {
 
   constructor(private httpClient: HttpClient) {}
 
-  get(module): Observable<any> {
+  get(module): Observable<string> {
     const m = module === "webdriverio"? "@wdio/sync": module;
     return this.httpClient
       .get<any>(`${BASE_URL}dependencies/index.json`)

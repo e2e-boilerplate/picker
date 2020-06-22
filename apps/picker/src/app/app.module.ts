@@ -6,9 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ConstantsModule } from '@picker/constants';
-import { FrameworksModule } from './frameworks/frameworks.module';
 import { HomeModule } from './home/home.module';
-import { JavascriptModule } from './javascript/javascript.module';
 import { PlatformModule } from '@angular/cdk/platform';
 import { InterceptorService } from '@picker/core-data';
 import { MaterialModule } from '@picker/material';
@@ -17,6 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { BoilerModule } from '@picker/boiler';
+import { ServicesModule } from '@picker/services';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,12 +25,11 @@ import { BoilerModule } from '@picker/boiler';
     BrowserModule,
     ConstantsModule,
     HomeModule,
-    JavascriptModule,
     PlatformModule,
-    FrameworksModule,
     HttpClientModule,
     MaterialModule,
     BoilerModule,
+    ServicesModule,
     StoreModule.forRoot(
       {},
       {

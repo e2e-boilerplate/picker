@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
-import {
-  Land,
-  LandService,
-} from '@picker/core-data';
+import { ILand } from '@picker/constants';
+import { LandService } from '@picker/services';
 import { BoilerFacade } from '@picker/boiler';
 
 @Component({
@@ -14,29 +12,24 @@ import { BoilerFacade } from '@picker/boiler';
   styleUrls: ['./land.component.css']
 })
 export class LandComponent implements OnInit {
-  title$ = 'Browser';
-  lands$: Observable<Land[]>;
-  path: string;
+  title = 'Land';
+  lands$: Observable<ILand[]>;
 
   constructor(
     private landService: LandService,
     private router: Router,
     private boilerFacade: BoilerFacade
-  ) {
-    boilerFacade.path$.subscribe( value => this.path = value);
-  }
+  ) {}
 
   ngOnInit(): void {
     this.boilerFacade.updateBoiler({ land: null });
-    this.getLand();
-  }
-
-  private getLand() {
+    this.boilerFacade.buildPath();
     this.lands$ = this.landService.all();
   }
 
   goto(id: string) {
     this.boilerFacade.updateBoiler({ land: id});
-    // this.router.navigate(['/framework']);
+    this.boilerFacade.buildPath();
+    this.router.navigate(['/framework']);
   }
 }

@@ -1,4 +1,4 @@
-<picker-toolbar [title]="title$"></picker-toolbar>
+<picker-toolbar [title]="title"></picker-toolbar>
 <div class="land">
   <div *ngFor="let land of lands$ | async">
     <picker-card [item]="land" (selected)="goto($event)"></picker-card>

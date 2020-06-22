@@ -1,7 +1,0 @@
-<picker-toolbar [title]="title"></picker-toolbar>
-<div class="platforms">
-  <div *ngFor="let framework of frameworks$ | async">
-    <picker-card [item]="framework" (selected)="goto($event)"></picker-card>
-  </div>
-</div>
-<!--<picker-footer></picker-footer>-->

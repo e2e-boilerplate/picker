@@ -1,23 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { MaterialModule } from '@picker/material';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
 
-const mockRouter = { navigate: jasmine.createSpy('navigate') };
-
-xdescribe('HomeComponent', () => {
+describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  const boilerFacadeMock = new BoilerFacadeMock();
   let compiled: any;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, MaterialModule],
       declarations: [HomeComponent],
-      providers: [{ provide: Router, useValue: mockRouter }],
+      providers: [
+        { provide: BoilerFacade, useValue: boilerFacadeMock}
+      ],
     }).compileComponents();
   }));
 
@@ -32,11 +33,25 @@ xdescribe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to [/platform] when Start button clicked', () => {
-    const start = fixture.debugElement.query(By.css('button'));
-    start.nativeElement.click();
+  it('should have content', () => {
+    expect(compiled.querySelectorAll('p').length).toEqual(3);
+  });
+
+  it('should reset state', () => {
+    const boilerSpy = spyOn<any>(boilerFacadeMock, 'resetBoiler').and.callThrough();
+    component.ngOnInit();
     fixture.detectChanges();
 
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/platforms']);
+    expect(boilerSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should navigate to /land', () => {
+    const router: Router = TestBed.inject(Router);
+    const routerSpy = spyOn(router, 'navigate');
+    const start = compiled.querySelector('button');
+    start.click();
+    fixture.detectChanges();
+
+    expect(routerSpy).toHaveBeenCalledWith(['/land']);
   });
 });

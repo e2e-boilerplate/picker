@@ -37,6 +37,9 @@
     },
     "boiler": {
       "tags": []
+    },
+    "services": {
+      "tags": []
     }
   }
 }
