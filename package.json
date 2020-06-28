@@ -55,8 +55,11 @@
     "@angular/cli": "9.1.9",
     "@angular/compiler-cli": "9.1.11",
     "@angular/language-service": "9.1.11",
+    "@ngrx/schematics": "9.2.0",
+    "@ngrx/store-devtools": "9.2.0",
     "@nrwl/cypress": "9.4.5",
     "@nrwl/jest": "9.4.5",
+    "@nrwl/nx": "^7.8.7",
     "@nrwl/workspace": "9.4.5",
     "@types/jest": "26.0.0",
     "@types/node": "8.10.61",
@@ -73,9 +76,7 @@
     "ts-jest": "26.1.1",
     "ts-node": "8.10.2",
     "tslint": "6.1.2",
-    "typescript": "3.8.3",
-    "@ngrx/schematics": "9.2.0",
-    "@ngrx/store-devtools": "9.2.0"
+    "typescript": "3.8.3"
   },
   "husky": {
     "hooks": {

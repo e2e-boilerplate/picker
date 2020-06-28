@@ -20,6 +20,6 @@ export class LandService {
   }
 
   all(): Observable<ILand[]> {
-    return this.httpClient.get<ILand[]>(`${BASE_URL}${this.path}/index.json`)
+    return this.httpClient.get<ILand[]>(`${BASE_URL}${this.path}index.json`)
   }
 }

@@ -1,36 +1,45 @@
-import { TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { LandService } from './land.service';
-import { landServiceMock } from '@picker/services';
 import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
-import { LAND } from '@picker/constants';
+import { BASE_URL, LAND } from '@picker/constants';
+
 
 describe('LandService', () => {
-  let service: LandService;
+  let landService: LandService;
+  let httpMock: HttpTestingController;
+  const boilerFacadeMock = new BoilerFacadeMock();
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      providers: [
-        { provide: BoilerFacade, useClass: BoilerFacadeMock},
-        { provide: LandService, useValue: landServiceMock }
-        ]
+      imports: [HttpClientTestingModule],
+      providers: [LandService, { provide: BoilerFacade, useValue: boilerFacadeMock}]
     });
-    service = TestBed.inject(LandService);
+    landService = TestBed.inject(LandService);
+    httpMock = TestBed.inject(HttpTestingController);
+  });
+
+  afterEach(() => {
+    httpMock.verify();
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
-    expect(landServiceMock.path).toEqual('nodejs');
+    expect(landService).toBeTruthy();
+    expect(landService.path).toBe('');
   });
 
-  it('should return land data', (done) => {
-    const landServiceSpy = spyOn(landServiceMock, 'all').and.callThrough();
-    landServiceMock.all().subscribe( value => {
-      expect(value).toEqual(LAND);
+  it('should return an Observable<ILand[]>', fakeAsync(() => {
+    landService.path = 'land';
+    const landServiceSpy = spyOn(landService, 'all').and.callThrough();
+
+    landService.all().subscribe( value => {
+      expect(value.length).toEqual(2);
       expect(landServiceSpy).toHaveBeenCalledTimes(1);
-      done();
     })
-  });
+    const req = httpMock.expectOne(`${BASE_URL}${landService.path}index.json`);
+    expect(req.request.method).toBe("GET");
+    req.flush(LAND);
+    tick();
+  }));
 });

@@ -23,14 +23,11 @@ export const initialState: State = boilerAdapter.getInitialState({
     land: null,
   },
   header: '',
-  path: 'land/'
+  path: 'land'
 });
 
 const boilerReducer = createReducer(
   initialState,
-  on(BoilerActions.boiled, (state) => ({
-    ...state
-  })),
   on(BoilerActions.update, (state, { item }) => ({
       ...state,
       data: { ...state.data, ...item }
