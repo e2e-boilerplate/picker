@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { ToolbarComponent } from './toolbar.component';
@@ -42,20 +42,20 @@ describe('ToolbarComponent', () => {
     expect(title.textContent).toContain(expectedTitle);
   });
 
-  it('should initialize', (done) => {
+  it('should initialize', async() => {
     const boilerSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildHeader').and.callThrough();
 
     component.ngOnInit();
     fixture.detectChanges();
+    await fixture.whenStable();
 
     expect(boilerSpy).toHaveBeenCalledTimes(1);
     component.header$.subscribe(value => {
-      expect(value).toEqual({});
-      done();
+      expect(value).toEqual('');
     });
   });
 
-  it('should have title and header', (done) => {
+  it('should have title and header', async() => {
     const title = compiled.querySelector('#title');
     const header = compiled.querySelector('#picks');
     const expectedTitle = 'nodejs';
@@ -64,11 +64,11 @@ describe('ToolbarComponent', () => {
     component.title = expectedTitle;
     component.header$ = of('nodejs framework');
     fixture.detectChanges();
+    await fixture.whenStable();
 
     expect(title.textContent).toEqual(expectedTitle);
     component.header$.subscribe(value => {
       expect(header.textContent).toEqual(value);
-      done();
     });
   });
 });

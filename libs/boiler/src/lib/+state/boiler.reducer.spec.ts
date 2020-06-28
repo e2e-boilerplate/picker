@@ -1,19 +1,7 @@
 import * as BoilerActions from './boiler.actions';
-import { State, initialState, reducer } from './boiler.reducer';
+import { State, initialState, reducer, boilerAdapter } from './boiler.reducer';
 
 describe('Boiler Reducer', () => {
-  describe('valid Boiler actions', () => {
-    it('should return boiled', () => {
-      const item = { platform: 'nodejs' };
-      const action = BoilerActions.boiled();
-      const actual: State = reducer(initialState, action);
-      const expected = {
-        land: null,
-      };
-
-      expect(actual.data).toEqual(expected);
-    });
-
     it('should update', () => {
       const item = { land: 'nodejs' };
       const action = BoilerActions.update({ item });
@@ -24,14 +12,49 @@ describe('Boiler Reducer', () => {
 
       expect(actual.data).toEqual(expected);
     });
+
+    it('should current path', () => {
+      const action = BoilerActions.path();
+      const currentState: State = boilerAdapter.getInitialState({
+        data: {
+          land: 'browser',
+        },
+        header: 'browser',
+        path: ''
+      });
+
+      const result = reducer(currentState, action);
+
+      expect(result.path).toBe('land/browser');
+    });
+
+  it('should return header', () => {
+    const action = BoilerActions.header();
+    const currentState: State = boilerAdapter.getInitialState({
+      data: {
+        land: 'browser',
+      },
+      header: '',
+      path: ''
+    });
+
+    const result = reducer(currentState, action);
+
+    expect(result.header).toBe('browser');
   });
 
-  describe('unknown action', () => {
-    it('should return the previous state', () => {
-      const action = {} as any;
-      const result = reducer(initialState, action);
-
-      expect(result).toBe(initialState);
+  it('should reset state', () => {
+    const action = BoilerActions.reset();
+    const currentState: State = boilerAdapter.getInitialState({
+      data: {
+        land: 'browser',
+      },
+      header: 'browser',
+      path: 'land/browser'
     });
+
+    const result = reducer(currentState, action);
+
+    expect(result).toStrictEqual(initialState);
   });
 });
