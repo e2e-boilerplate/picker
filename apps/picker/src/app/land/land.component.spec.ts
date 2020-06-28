@@ -41,48 +41,48 @@ describe('LandComponent', () => {
     compiled = fixture.debugElement.nativeElement;
   });
 
-  it('should create', () => {
+  it('should create', async () => {
     expect(component).toBeTruthy();
     expect(component.title).toEqual('Land');
-  });
 
-  it('should initialize', (done) => {
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
     const boilerBuildSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
 
     component.ngOnInit();
     fixture.detectChanges();
+    await fixture.whenStable();
 
     expect(boilerUpdateSpy).toHaveBeenCalledWith({land: null});
     expect(boilerBuildSpy).toHaveBeenCalledTimes(1);
-
     component.lands$.subscribe(value => {
       expect(value).toEqual(LAND);
-      done();
-    })
+    });
   });
 
   it('goto', () => {
     const router: Router = TestBed.inject(Router);
-    const routerSpy = spyOn(router, 'navigate');
-    const gotoSpy = spyOn(component, 'goto').and.callThrough();
+    const routerSpy = spyOn<Router>(router, 'navigate');
+    const gotoSpy = spyOn<LandComponent>(component, 'goto').and.callThrough();
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
     const boilerBuildSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
     component.goto('browser');
     fixture.detectChanges();
 
-    expect(gotoSpy).toHaveBeenCalled();
+    expect(gotoSpy).toHaveBeenCalledTimes(1);
     expect(gotoSpy).toHaveBeenCalledWith('browser');
+
     expect(boilerUpdateSpy).toHaveBeenCalledWith({land: 'browser'});
     expect(boilerBuildSpy).toHaveBeenCalledTimes(1);
+
     expect(routerSpy).toHaveBeenCalledWith(["/framework"]);
+    expect(routerSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should have title and item', () => {
     const title = compiled.querySelector('picker-toolbar');
-    const card = compiled.querySelectorAll('picker-card');
     expect(title.getAttribute('ng-reflect-title')).toEqual(component.title);
 
+    const card = compiled.querySelectorAll('picker-card');
     const item = card[0].getAttribute('ng-reflect-item');
     expect(item).toBeDefined();
   });

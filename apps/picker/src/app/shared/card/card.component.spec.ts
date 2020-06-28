@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { of } from 'rxjs';
 
 import { MaterialModule } from '@picker/material';
 import { SUMMARY_CARD } from '@picker/constants';
@@ -37,14 +36,14 @@ describe('CardComponent', () => {
     expect(component.item).toEqual(SUMMARY_CARD);
   });
 
-  it('should emit on click', () => {
-    // const component = fixture.componentInstance;
+  it('should emit on click', async () => {
     const selectedSpy = spyOn(component.selected, 'emit');
     const nativeElement = fixture.nativeElement;
     const button = nativeElement.querySelector('button');
 
     button.dispatchEvent(new Event('click'));
     fixture.detectChanges();
+    await fixture.whenStable();
 
     expect(selectedSpy).toHaveBeenCalledWith(SUMMARY_CARD.id);
   });
