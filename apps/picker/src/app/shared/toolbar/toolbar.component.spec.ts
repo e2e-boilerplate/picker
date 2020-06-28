@@ -66,7 +66,7 @@ describe('ToolbarComponent', () => {
     fixture.detectChanges();
     await fixture.whenStable();
 
-    expect(title.textContent).toEqual(expectedTitle);
+    expect(title.textContent).toEqual(`Choose your ${expectedTitle}`);
     component.header$.subscribe(value => {
       expect(header.textContent).toEqual(value);
     });
