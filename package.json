@@ -59,7 +59,7 @@
     "@ngrx/store-devtools": "9.2.0",
     "@nrwl/cypress": "9.4.5",
     "@nrwl/jest": "9.4.5",
-    "@nrwl/nx": "^7.8.7",
+    "@nrwl/nx": "7.8.7",
     "@nrwl/workspace": "9.4.5",
     "@types/jest": "26.0.3",
     "@types/node": "8.10.61",
