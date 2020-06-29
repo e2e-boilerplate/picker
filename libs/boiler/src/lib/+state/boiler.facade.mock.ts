@@ -4,8 +4,10 @@ export class BoilerFacadeMock {
   path$ = of('');
   header$ = of('');
 
-  updateBoiler() {}
+  updateBoiler() { }
   resetBoiler() {}
   buildHeader() {}
   buildPath() {}
+  getVersion() {}
+  getModuleVersion() { }
 }

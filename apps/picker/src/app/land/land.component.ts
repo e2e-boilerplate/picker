@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { ILand } from '@picker/constants';
-import { LandService } from '@picker/services';
+import { LandService } from '@picker/core-data';
 import { BoilerFacade } from '@picker/boiler';
 
 @Component({

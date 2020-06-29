@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { VersionService } from '@picker/core-data';
 import { ISummaryCard } from '@picker/constants';
+import { BoilerFacade } from '@picker/boiler';
 
 @Component({
   selector: 'picker-card',
@@ -14,14 +14,10 @@ export class CardComponent implements OnInit {
   @Output() selected = new EventEmitter<String>();
   version$: Observable<string>;
 
-  constructor(private versionService: VersionService) {}
+  constructor(private boilerFacade: BoilerFacade) {}
 
   ngOnInit(): void {
-    this.getVersion();
-  }
-
-  getVersion(): void {
-    this.version$ = this.versionService.get(this.item.id);
+    this.version$ = this.boilerFacade.getModuleVersion(this.item.id);
   }
 
   selectedItem(value: String): void {

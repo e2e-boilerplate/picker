@@ -1,14 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { MaterialModule } from '@picker/material';
 import { SUMMARY_CARD } from '@picker/constants';
 import { CardComponent } from './card.component';
-import { versionServiceMock, VersionService } from '@picker/core-data';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
 
 describe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
+  const boilerFacadeMock = new BoilerFacadeMock();
   let compiled: any;
 
   beforeEach(async(() => {
@@ -16,7 +17,7 @@ describe('CardComponent', () => {
       declarations: [CardComponent],
       imports: [MaterialModule, HttpClientTestingModule],
       providers: [
-        { provide: VersionService, useValue: versionServiceMock }
+        { provide: BoilerFacade, useValue: boilerFacadeMock }
       ]
     }).compileComponents();
   }));
@@ -24,9 +25,7 @@ describe('CardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
-    component.item = {
-      ...SUMMARY_CARD,
-    };
+    component.item = SUMMARY_CARD;
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
   });
@@ -56,23 +55,18 @@ describe('CardComponent', () => {
     expect(selectedSpy).toHaveBeenCalledWith('protractor');
   });
 
-  it('getVersion', (done) => {
-    const versionSpy = spyOn(versionServiceMock, 'get').and.callThrough();
-    const expectedVersion = '0.0.1'
-    component.ngOnInit();
-    fixture.detectChanges();
+  it('selectedItem', () => {
+    const selectedSpy = spyOn(component.selected, 'emit');
+    component.selectedItem('protractor');
 
-    expect(component.version$).toBeTruthy();
-    component.version$.subscribe(value => {
-      expect(value).toEqual(expectedVersion);
-      done();
-    });
+    expect(selectedSpy).toHaveBeenCalled();
+    expect(selectedSpy).toHaveBeenCalledWith('protractor');
   });
 
   it('card header', () => {
     const title = compiled.querySelector('mat-card-title');
     const subtitle = compiled.querySelector('mat-card-subtitle');
-    const expectedTitle = component.item.title + ' 0.0.1';
+    const expectedTitle = component.item.title + ' ';
 
     expect(title.textContent).toEqual(expectedTitle);
     expect(subtitle.textContent).toEqual(component.item.subtitle);

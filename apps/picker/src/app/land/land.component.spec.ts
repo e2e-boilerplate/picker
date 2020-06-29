@@ -11,14 +11,15 @@ import { LAND } from '@picker/constants';
 
 import {
   LandService,
-  landServiceMock
-} from '@picker/services';
+  LandServiceMock
+} from '@picker/core-data';
 
 
 describe('LandComponent', () => {
   let component: LandComponent;
   let fixture: ComponentFixture<LandComponent>;
   const boilerFacadeMock = new BoilerFacadeMock();
+  const landServiceMock = new LandServiceMock();
   let compiled: any;
 
   beforeEach(async(() => {

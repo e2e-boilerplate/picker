@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getHeader, getPath } from './boiler.selectors';
+import { getHeader, getPath, getVersion } from './boiler.selectors';
 import * as BoilerActions from './boiler.actions';
 
 @Injectable()
@@ -24,5 +24,13 @@ export class BoilerFacade {
 
   buildPath() {
     this.store.dispatch(BoilerActions.path());
+  }
+
+  getVersion() {
+    this.store.dispatch(BoilerActions.loadVersion());
+  }
+
+  getModuleVersion(name){
+    return this.store.select(getVersion(name));
   }
 }

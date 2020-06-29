@@ -2,12 +2,13 @@ import { createReducer, on, Action } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import * as BoilerActions from './boiler.actions';
-import { BoilerEntity } from './boiler.models';
+import { IBoilerEntity, IVersionEntity } from './boiler.models';
 
 export const BOILER_FEATURE_KEY = 'boiler';
 
-export interface State extends EntityState<BoilerEntity> {
-  data: BoilerEntity;
+export interface State extends EntityState<IBoilerEntity> {
+  data: IBoilerEntity;
+  version: IVersionEntity
   header: string,
   path: string,
 }
@@ -16,18 +17,23 @@ export interface BoilerPartialState {
   readonly [BOILER_FEATURE_KEY]: State;
 }
 
-export const boilerAdapter: EntityAdapter<BoilerEntity> = createEntityAdapter<BoilerEntity>();
+export const boilerAdapter: EntityAdapter<IBoilerEntity> = createEntityAdapter<IBoilerEntity>();
 
 export const initialState: State = boilerAdapter.getInitialState({
   data: {
     land: null,
   },
+  version: {},
   header: '',
   path: 'land'
 });
 
 const boilerReducer = createReducer(
   initialState,
+  on(BoilerActions.version, (state, {item}) => ({
+      ...state,
+      version: {...state.version, ...item}
+  })),
   on(BoilerActions.update, (state, { item }) => ({
       ...state,
       data: { ...state.data, ...item }
@@ -49,7 +55,9 @@ const boilerReducer = createReducer(
       header
     };
   }),
-  on(BoilerActions.reset, (state) => ({ ...initialState }))
+  on(BoilerActions.reset, (state) => ({
+    ...initialState
+  }))
 );
 
 export function reducer(state: State | undefined, action: Action) {

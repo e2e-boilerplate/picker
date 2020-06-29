@@ -1,7 +1,7 @@
 module.exports = {
   name: 'boiler',
   preset: '../../jest.config.js',
-  collectCoverage: true,
+  collectCoverage: false,
   coverageDirectory: '../../coverage/libs/boiler',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',

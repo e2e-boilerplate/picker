@@ -1,4 +1,4 @@
 export * from './lib/services.module';
 
-export * from './lib/land/land.service.mock';
-export * from './lib/land/land.service';
+export * from './lib/version/version.service';
+export * from './lib/version/version.service.mock';

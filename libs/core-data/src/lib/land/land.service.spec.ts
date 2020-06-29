@@ -36,7 +36,8 @@ describe('LandService', () => {
     landService.all().subscribe( value => {
       expect(value.length).toEqual(2);
       expect(landServiceSpy).toHaveBeenCalledTimes(1);
-    })
+    });
+
     const req = httpMock.expectOne(`${BASE_URL}${landService.path}index.json`);
     expect(req.request.method).toBe("GET");
     req.flush(LAND);

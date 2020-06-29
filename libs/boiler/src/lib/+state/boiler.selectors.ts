@@ -9,3 +9,4 @@ export const getBoilerState = createFeatureSelector<BoilerPartialState, State>(B
 
 export const getPath = createSelector(getBoilerState, (state: State) => state.path);
 export const getHeader = createSelector(getBoilerState, (state: State) => state.header);
+export const getVersion = (name) => createSelector(getBoilerState, (state: State) => state.version[name]? state.version[name]: '');

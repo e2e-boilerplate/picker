@@ -19,6 +19,7 @@ describe('Boiler Reducer', () => {
         data: {
           land: 'browser',
         },
+        version: {},
         header: 'browser',
         path: ''
       });
@@ -34,6 +35,7 @@ describe('Boiler Reducer', () => {
       data: {
         land: 'browser',
       },
+      version: {},
       header: '',
       path: ''
     });
@@ -49,6 +51,7 @@ describe('Boiler Reducer', () => {
       data: {
         land: 'browser',
       },
+      version: {},
       header: 'browser',
       path: 'land/browser'
     });
