@@ -53,8 +53,6 @@ describe('LandService', () => {
       expect(landServiceSpy).toHaveBeenCalledTimes(1);
     });
 
-    console.log('landService.path : ', landService.path);
-
     const req = httpMock.expectOne(`${BASE_URL}${landService.path}/index.json`);
     expect(req.request.method).toBe("GET");
     req.flush(LAND);
