@@ -7,5 +7,5 @@ export interface ILand {
   link: string;
   domain: string;
   maintained: string;
-  avatar: boolean;
+  disable: boolean;
 }

@@ -22,10 +22,11 @@ export const boilerAdapter: EntityAdapter<IBoilerEntity> = createEntityAdapter<I
 export const initialState: State = boilerAdapter.getInitialState({
   data: {
     land: null,
+    approach: null
   },
   version: {},
   header: '',
-  path: 'land'
+  path: 'land',
 });
 
 const boilerReducer = createReducer(

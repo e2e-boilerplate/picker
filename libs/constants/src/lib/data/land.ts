@@ -10,7 +10,7 @@ export const LAND: ILand[] = [
     "link": "https://en.wikipedia.org/wiki/Web_browser",
     "domain": "wikipedia.org",
     "maintained": "Not applicable",
-    "avatar": false
+    "disable": false
   },
   {
     "id": "nodejs",
@@ -21,6 +21,6 @@ export const LAND: ILand[] = [
     "link": "https://nodejs.org/en/",
     "domain": "nodejs.org",
     "maintained": "OpenJS Foundation",
-    "avatar": false
+    "disable": false
   }
 ]

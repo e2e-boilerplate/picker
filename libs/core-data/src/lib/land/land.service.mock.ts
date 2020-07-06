@@ -8,4 +8,8 @@ export class LandServiceMock {
   all(): Observable<ILand[]> {
     return of(LAND);
   }
+
+  getLand(): Observable<ILand[]> {
+    return of(LAND);
+  }
 }

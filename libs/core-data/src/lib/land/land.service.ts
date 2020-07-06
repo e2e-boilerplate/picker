@@ -22,4 +22,8 @@ export class LandService {
   all(): Observable<ILand[]> {
     return this.httpClient.get<ILand[]>(`${BASE_URL}${this.path}index.json`)
   }
+
+  getLand(): Observable<ILand[]> {
+    return this.httpClient.get<ILand[]>(`${BASE_URL}${this.path}/index.json`) // TODO check /
+  }
 }

@@ -2,13 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { LandComponent } from './land.component';
 import { SharedModule } from '../shared/shared.module';
 import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
-import { Router } from '@angular/router';
 import { LAND } from '@picker/constants';
-
 import {
   LandService,
   LandServiceMock

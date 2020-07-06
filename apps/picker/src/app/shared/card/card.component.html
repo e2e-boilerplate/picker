@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [ngClass]="{disabled: item.disable}">
   <mat-card-header>
     <mat-card-title *ngIf="item.title">{{ item.title }} {{ version$ | async }}</mat-card-title>
     <mat-card-subtitle *ngIf="item.subtitle">{{
@@ -14,6 +14,6 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="selectedItem(item.id)">SELECT</button>
+    <button mat-button (click)="selectedItem(item.id)" [disabled]="item.disable">SELECT</button>
   </mat-card-actions>
 </mat-card>

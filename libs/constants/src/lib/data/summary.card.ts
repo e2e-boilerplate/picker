@@ -7,7 +7,7 @@ export interface ISummaryCard {
   link: string;
   domain: string;
   maintained: string;
-  avatar: boolean;
+  disable: boolean;
 }
 
 export const SUMMARY_CARD: ISummaryCard = {
@@ -19,5 +19,5 @@ export const SUMMARY_CARD: ISummaryCard = {
   "link": "http://browserify.org",
   "domain": "browserify.org",
   "maintained": "James Halliday et al.",
-  "avatar": false
+  "disable": false
 }

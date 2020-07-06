@@ -3,6 +3,7 @@
  */
 export interface IBoilerEntity {
   land: string| null;
+  approach: string| null;
 }
 
 export interface IVersionEntity {

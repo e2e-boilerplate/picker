@@ -2,21 +2,23 @@ import * as BoilerActions from './boiler.actions';
 import { State, initialState, reducer, boilerAdapter } from './boiler.reducer';
 
 describe('Boiler Reducer', () => {
-    it('should update', () => {
+    it('should update data', () => {
       const item = { land: 'nodejs' };
       const action = BoilerActions.update({ item });
       const actual: State = reducer(initialState, action);
       const expected = {
+        approach: null,
         land: 'nodejs',
       };
 
       expect(actual.data).toEqual(expected);
     });
 
-    it('should current path', () => {
+    it('should update current path', () => {
       const action = BoilerActions.path();
       const currentState: State = boilerAdapter.getInitialState({
         data: {
+          approach: null,
           land: 'browser',
         },
         version: {},
@@ -33,6 +35,7 @@ describe('Boiler Reducer', () => {
     const action = BoilerActions.header();
     const currentState: State = boilerAdapter.getInitialState({
       data: {
+        approach: null,
         land: 'browser',
       },
       version: {},
@@ -49,6 +52,7 @@ describe('Boiler Reducer', () => {
     const action = BoilerActions.reset();
     const currentState: State = boilerAdapter.getInitialState({
       data: {
+        approach: 'framework',
         land: 'browser',
       },
       version: {},

@@ -29,7 +29,7 @@ describe('LandService', () => {
     expect(landService.path).toBe('');
   });
 
-  it('should return an Observable<ILand[]>', fakeAsync(() => {
+  it('all() should return an Observable<ILand[]>', fakeAsync(() => {
     landService.path = 'land';
     const landServiceSpy = spyOn(landService, 'all').and.callThrough();
 
@@ -39,6 +39,23 @@ describe('LandService', () => {
     });
 
     const req = httpMock.expectOne(`${BASE_URL}${landService.path}index.json`);
+    expect(req.request.method).toBe("GET");
+    req.flush(LAND);
+    tick();
+  }));
+
+  it('getLand() should return an Observable<ILand[]>', fakeAsync(() => {
+    landService.path = 'land/browser';
+    const landServiceSpy = spyOn(landService, 'getLand').and.callThrough();
+
+    landService.getLand().subscribe( value => {
+      expect(value.length).toEqual(2);
+      expect(landServiceSpy).toHaveBeenCalledTimes(1);
+    });
+
+    console.log('landService.path : ', landService.path);
+
+    const req = httpMock.expectOne(`${BASE_URL}${landService.path}/index.json`);
     expect(req.request.method).toBe("GET");
     req.flush(LAND);
     tick();
