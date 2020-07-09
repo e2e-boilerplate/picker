@@ -41,7 +41,7 @@ describe('FrameworkComponent', () => {
 
   it('should create', async () => {
     expect(component).toBeTruthy();
-    expect(component.title).toEqual('Approach');
+    expect(component.title).toEqual('Framework');
 
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
     const boilerBuildSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
@@ -50,15 +50,23 @@ describe('FrameworkComponent', () => {
     fixture.detectChanges();
     await fixture.whenStable();
 
-    expect(boilerUpdateSpy).toHaveBeenCalledWith({approach: null});
+    expect(boilerUpdateSpy).toHaveBeenCalledWith({framework: null});
     expect(boilerBuildSpy).toHaveBeenCalledTimes(1);
-    component.approach$.subscribe(value => {
+    component.framework$.subscribe(value => {
       expect(value).toEqual(LAND);
     });
   });
 
-  it('goto', () => {
-    // TODO
+  it('goto', async () => {
+    const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
+    const boilerPath = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
+
+    component.goto('cypress');
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    expect(boilerUpdateSpy).toHaveBeenCalledWith({framework: 'cypress'});
+    expect(boilerPath).toHaveBeenCalledTimes(1);
   });
 
   it('should have title and item', () => {

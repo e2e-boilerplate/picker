@@ -1,0 +1,6 @@
+<picker-toolbar [title]="title"></picker-toolbar>
+<div class="approach">
+  <div *ngFor="let approach of approach$ | async">
+    <picker-card [item]="approach" (selected)="goto($event)"></picker-card>
+  </div>
+</div>

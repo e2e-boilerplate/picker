@@ -30,6 +30,6 @@ export class LandComponent implements OnInit {
   goto(id: string) {
     this.boilerFacade.updateBoiler({ land: id});
     this.boilerFacade.buildPath();
-    this.router.navigate(['/framework']);
+    this.router.navigate(['/approach']);
   }
 }

@@ -1,6 +1,6 @@
 <picker-toolbar [title]="title"></picker-toolbar>
-<div class="land">
-  <div *ngFor="let approach of approach$ | async">
-    <picker-card [item]="approach" (selected)="goto($event)"></picker-card>
+<div class="framework">
+  <div *ngFor="let framework of framework$ | async">
+    <picker-card [item]="framework" (selected)="goto($event)"></picker-card>
   </div>
 </div>

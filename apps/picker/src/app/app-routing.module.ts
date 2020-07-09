@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./land/land.module').then((m) => m.LandModule),
   },
   {
+    path: 'approach',
+    loadChildren: () => import('./approach/approach.module').then((m) => m.ApproachModule)
+  },
+  {
     path: 'framework',
     loadChildren: () => import('./framework/framework.module').then((m) => m.FrameworkModule),
   },

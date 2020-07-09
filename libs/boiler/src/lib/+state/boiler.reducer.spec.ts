@@ -8,6 +8,7 @@ describe('Boiler Reducer', () => {
       const actual: State = reducer(initialState, action);
       const expected = {
         approach: null,
+        framework: null,
         land: 'nodejs',
       };
 
@@ -20,6 +21,7 @@ describe('Boiler Reducer', () => {
         data: {
           approach: null,
           land: 'browser',
+          framework: null,
         },
         version: {},
         header: 'browser',
@@ -37,6 +39,7 @@ describe('Boiler Reducer', () => {
       data: {
         approach: null,
         land: 'browser',
+        framework: null,
       },
       version: {},
       header: '',
@@ -54,6 +57,7 @@ describe('Boiler Reducer', () => {
       data: {
         approach: 'framework',
         land: 'browser',
+        framework: null,
       },
       version: {},
       header: 'browser',

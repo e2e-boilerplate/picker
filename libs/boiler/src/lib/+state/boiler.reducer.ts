@@ -22,7 +22,8 @@ export const boilerAdapter: EntityAdapter<IBoilerEntity> = createEntityAdapter<I
 export const initialState: State = boilerAdapter.getInitialState({
   data: {
     land: null,
-    approach: null
+    approach: null,
+    framework: null
   },
   version: {},
   header: '',
