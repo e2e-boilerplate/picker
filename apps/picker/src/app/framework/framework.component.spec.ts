@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FrameworkComponent } from './framework.component';
 import { SharedModule } from '../shared/shared.module';
@@ -57,16 +58,23 @@ describe('FrameworkComponent', () => {
     });
   });
 
-  it('goto', async () => {
+  it('goto',  () => {
+    const router: Router = TestBed.inject(Router);
+    const gotoSpy = spyOn<FrameworkComponent>(component, 'goto').and.callThrough();
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
-    const boilerPath = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
-
+    const boilerPathSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
+    const routerSpy = spyOn<Router>(router, 'navigate');
     component.goto('cypress');
     fixture.detectChanges();
-    await fixture.whenStable();
+
+    expect(gotoSpy).toHaveBeenCalledTimes(1);
+    expect(gotoSpy).toHaveBeenCalledWith('cypress');
 
     expect(boilerUpdateSpy).toHaveBeenCalledWith({framework: 'cypress'});
-    expect(boilerPath).toHaveBeenCalledTimes(1);
+    expect(boilerPathSpy).toHaveBeenCalledTimes(1);
+
+    expect(routerSpy).toHaveBeenCalledWith(["/javascript"]);
+    expect(routerSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should have title and item', () => {

@@ -30,6 +30,6 @@ export class FrameworkComponent implements OnInit {
   goto(id: string) {
     this.boilerFacade.updateBoiler({ framework: id})
     this.boilerFacade.buildPath();
-    // this.router.navigate([])
+    this.router.navigate(['/javascript'])
   }
 }

@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'framework',
     loadChildren: () => import('./framework/framework.module').then((m) => m.FrameworkModule),
   },
+  {
+    path: 'javascript',
+    loadChildren: () => import('./javascript/javascript.module').then((m) => m.JavascriptModule),
+  },
 ];
 
 @NgModule({

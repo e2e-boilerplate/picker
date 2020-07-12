@@ -55,14 +55,6 @@ describe('CardComponent', () => {
     expect(selectedSpy).toHaveBeenCalledWith('protractor');
   });
 
-  it('selectedItem', () => {
-    const selectedSpy = spyOn(component.selected, 'emit');
-    component.selectedItem('protractor');
-
-    expect(selectedSpy).toHaveBeenCalled();
-    expect(selectedSpy).toHaveBeenCalledWith('protractor');
-  });
-
   it('card header', () => {
     const title = compiled.querySelector('mat-card-title');
     const subtitle = compiled.querySelector('mat-card-subtitle');

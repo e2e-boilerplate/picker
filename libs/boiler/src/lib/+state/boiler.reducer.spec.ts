@@ -7,9 +7,10 @@ describe('Boiler Reducer', () => {
       const action = BoilerActions.update({ item });
       const actual: State = reducer(initialState, action);
       const expected = {
+        land: 'nodejs',
         approach: null,
         framework: null,
-        land: 'nodejs',
+        javascript: null,
       };
 
       expect(actual.data).toEqual(expected);
@@ -19,9 +20,10 @@ describe('Boiler Reducer', () => {
       const action = BoilerActions.path();
       const currentState: State = boilerAdapter.getInitialState({
         data: {
-          approach: null,
           land: 'browser',
+          approach: null,
           framework: null,
+          javascript: null,
         },
         version: {},
         header: 'browser',
@@ -37,9 +39,10 @@ describe('Boiler Reducer', () => {
     const action = BoilerActions.header();
     const currentState: State = boilerAdapter.getInitialState({
       data: {
-        approach: null,
         land: 'browser',
+        approach: 'framework',
         framework: null,
+        javascript: null,
       },
       version: {},
       header: '',
@@ -48,16 +51,17 @@ describe('Boiler Reducer', () => {
 
     const result = reducer(currentState, action);
 
-    expect(result.header).toBe('browser');
+    expect(result.header).toBe('browser framework');
   });
 
   it('should reset state', () => {
     const action = BoilerActions.reset();
     const currentState: State = boilerAdapter.getInitialState({
       data: {
-        approach: 'framework',
         land: 'browser',
+        approach: null,
         framework: null,
+        javascript: null,
       },
       version: {},
       header: 'browser',
