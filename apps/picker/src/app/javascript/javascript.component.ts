@@ -27,4 +27,9 @@ export class JavascriptComponent implements OnInit {
     this.javascript$ = this.landService.getLand();
   }
 
+  goto(id: string): void {
+   this.boilerFacade.updateBoiler({ javascript: id})
+   this.boilerFacade.buildPath();
+   // this.router.navigate([]);
+  }
 }

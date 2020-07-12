@@ -1,1 +1,6 @@
-<p>javascript works!</p>
+<picker-toolbar [title]="title"></picker-toolbar>
+<div class="javascript">
+  <div *ngFor="let javascript of javascript$ | async">
+    <picker-card [item]="javascript" (selected)="goto($event)"></picker-card>
+  </div>
+</div>
