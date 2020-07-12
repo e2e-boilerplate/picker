@@ -13,15 +13,20 @@ export class CardComponent implements OnInit {
   @Input() item: ISummaryCard;
   @Output() selected = new EventEmitter<String>();
   version$: Observable<string>;
+  id: string;
 
   constructor(private boilerFacade: BoilerFacade) {}
 
   ngOnInit(): void {
-    const id = this.item.id === 'webdriverio'? '@wdio/sync' : this.item.id;
-    this.version$ = this.boilerFacade.getModuleVersion(id);
+    this.setId(this.item.id);
+    this.version$ = this.boilerFacade.getModuleVersion(this.id);
   }
 
   selectedItem(value: String): void {
     this.selected.emit(value);
+  }
+
+  setId(value: string): void {
+    this.id = value === 'webdriverio'? '@wdio/sync' : this.item.id;
   }
 }

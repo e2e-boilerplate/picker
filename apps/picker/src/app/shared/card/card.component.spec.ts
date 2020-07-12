@@ -83,4 +83,21 @@ describe('CardComponent', () => {
     expect(domainLink.getAttribute('href')).toEqual(link);
     expect(domainLink.getAttribute('target')).toEqual('_blank');
   });
+
+  it('setId',  () => {
+    const setIdSpy = spyOn(component, 'setId').and.callThrough();
+
+    component.ngOnInit();
+    fixture.detectChanges();
+    fixture.whenStable();
+
+    expect(setIdSpy).toHaveBeenCalledWith('browserify');
+    expect(component.id).toEqual('browserify');
+
+    component.setId('webdriverio');
+    fixture.detectChanges();
+    fixture.whenStable();
+
+    expect(component.id).toEqual('@wdio/sync');
+  });
 });
