@@ -17,7 +17,8 @@ export class CardComponent implements OnInit {
   constructor(private boilerFacade: BoilerFacade) {}
 
   ngOnInit(): void {
-    this.version$ = this.boilerFacade.getModuleVersion(this.item.id);
+    const id = this.item.id === 'webdriverio'? '@wdio/sync' : this.item.id;
+    this.version$ = this.boilerFacade.getModuleVersion(id);
   }
 
   selectedItem(value: String): void {
