@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'javascript',
     loadChildren: () => import('./javascript/javascript.module').then((m) => m.JavascriptModule),
   },
+  {
+    path: 'module',
+    loadChildren: () => import('./module/module.module').then((m) => m.ModuleModule),
+  },
 ];
 
 @NgModule({

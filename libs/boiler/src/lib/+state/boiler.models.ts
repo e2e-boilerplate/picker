@@ -6,6 +6,7 @@ export interface IBoilerEntity {
   approach: string| null;
   framework: string | null;
   javascript: string | null;
+  module: string | null;
 }
 
 export interface IVersionEntity {

@@ -7,14 +7,13 @@ import { LandService } from '@picker/core-data';
 import { BoilerFacade } from '@picker/boiler';
 
 @Component({
-  selector: 'picker-javascript',
-  templateUrl: './javascript.component.html',
-  styleUrls: ['./javascript.component.css']
+  selector: 'picker-module',
+  templateUrl: './module.component.html',
+  styleUrls: ['./module.component.css']
 })
-export class JavascriptComponent implements OnInit {
+export class ModuleComponent implements OnInit {
   title = 'Approach';
-  javascript$: Observable<ILand[]>;
-
+  module$: Observable<ILand[]>;
   constructor(
     private landService: LandService,
     private router: Router,
@@ -22,14 +21,14 @@ export class JavascriptComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.boilerFacade.updateBoiler({ javascript: null});
+    this.boilerFacade.updateBoiler({ module: null});
     this.boilerFacade.buildPath();
-    this.javascript$ = this.landService.getLand();
+    this.module$ = this.landService.getLand();
   }
 
   goto(id: string): void {
-   this.boilerFacade.updateBoiler({ javascript: id})
-   this.boilerFacade.buildPath();
-   this.router.navigate(['/module']);
+    this.boilerFacade.updateBoiler({ module: id})
+    this.boilerFacade.buildPath();
+    // this.router.navigate(['/module']);
   }
 }

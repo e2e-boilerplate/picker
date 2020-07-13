@@ -24,7 +24,8 @@ export const initialState: State = boilerAdapter.getInitialState({
     land: null,
     approach: null,
     framework: null,
-    javascript: null
+    javascript: null,
+    module: null
   },
   version: {},
   header: '',
