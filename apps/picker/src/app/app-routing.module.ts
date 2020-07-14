@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'module',
     loadChildren: () => import('./module/module.module').then((m) => m.ModuleModule),
   },
+  {
+    path: 'bundler',
+    loadChildren: () => import('./bundler/bundler.module').then((m) => m.BundlerModule),
+  },
 ];
 
 @NgModule({

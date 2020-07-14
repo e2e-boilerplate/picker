@@ -12,6 +12,7 @@ describe('Boiler Reducer', () => {
         framework: null,
         javascript: null,
         module: null,
+        bundler: null,
       };
 
       expect(actual.data).toEqual(expected);
@@ -26,6 +27,7 @@ describe('Boiler Reducer', () => {
           framework: null,
           javascript: null,
           module: null,
+          bundler: null,
         },
         version: {},
         header: 'browser',
@@ -46,6 +48,7 @@ describe('Boiler Reducer', () => {
         framework: null,
         javascript: null,
         module: null,
+        bundler: null,
       },
       version: {},
       header: '',
@@ -66,6 +69,7 @@ describe('Boiler Reducer', () => {
         framework: null,
         javascript: null,
         module: null,
+        bundler: null,
       },
       version: {},
       header: 'browser',

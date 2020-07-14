@@ -14,6 +14,8 @@ import { BoilerFacade } from '@picker/boiler';
 export class ModuleComponent implements OnInit {
   title = 'Approach';
   module$: Observable<ILand[]>;
+  header$: Observable<any>;
+
   constructor(
     private landService: LandService,
     private router: Router,
@@ -24,11 +26,17 @@ export class ModuleComponent implements OnInit {
     this.boilerFacade.updateBoiler({ module: null});
     this.boilerFacade.buildPath();
     this.module$ = this.landService.getLand();
+    this.header$ = this.boilerFacade.header$;
   }
 
   goto(id: string): void {
     this.boilerFacade.updateBoiler({ module: id})
     this.boilerFacade.buildPath();
-    // this.router.navigate(['/module']);
+    this.header$.subscribe(value => {
+      const parts = value.split(' ');
+      if(parts.includes('typescript') && parts.includes('cypress') && parts.includes('browser')) {
+        this.router.navigate(['/bundler']);
+      }
+    });
   }
 }

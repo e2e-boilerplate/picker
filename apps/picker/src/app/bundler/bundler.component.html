@@ -1,0 +1,7 @@
+<picker-toolbar [title]="title"></picker-toolbar>
+<div class="bundler">
+  <div *ngFor="let bundler of bundler$ | async">
+    <picker-card [item]="bundler" (selected)="goto($event)"></picker-card>
+  </div>
+</div>
+
