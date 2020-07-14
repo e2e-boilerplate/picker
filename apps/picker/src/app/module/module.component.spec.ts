@@ -12,7 +12,6 @@ import {
   LandServiceMock
 } from '@picker/core-data';
 import { Router } from '@angular/router';
-import { JavascriptComponent } from '../javascript/javascript.component';
 
 describe('ModuleComponent', () => {
   let component: ModuleComponent;
