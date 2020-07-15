@@ -12,6 +12,7 @@ import {
   LandServiceMock
 } from '@picker/core-data';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('ModuleComponent', () => {
   let component: ModuleComponent;
@@ -72,7 +73,8 @@ describe('ModuleComponent', () => {
     const gotoSpy = spyOn<ModuleComponent>(component, 'goto').and.callThrough();
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
     const boilerPathSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
-    // const routerSpy = spyOn<Router>(router, 'navigate');
+    const routerSpy = spyOn<Router>(router, 'navigate');
+    component.header$ = of('typescript cypress browser');
     component.goto('typescript');
     fixture.detectChanges();
 
@@ -82,7 +84,7 @@ describe('ModuleComponent', () => {
     expect(boilerUpdateSpy).toHaveBeenCalledWith({module: 'typescript'});
     expect(boilerPathSpy).toHaveBeenCalledTimes(1);
 
-    // expect(routerSpy).toHaveBeenCalledWith(["/module"]);
-    // expect(routerSpy).toHaveBeenCalledTimes(1);
+    expect(routerSpy).toHaveBeenCalledWith(["/bundler"]);
+    expect(routerSpy).toHaveBeenCalledTimes(1);
   });
 });

@@ -28,7 +28,7 @@ export class BundlerComponent implements OnInit {
   }
 
   goto(id: string) {
-    this.boilerFacade.updateBoiler({ land: id});
+    this.boilerFacade.updateBoiler({ bundler: id});
     this.boilerFacade.buildPath();
     // this.router.navigate(['/approach']);
   }
