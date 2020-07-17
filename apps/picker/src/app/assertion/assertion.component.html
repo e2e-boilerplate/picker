@@ -1,0 +1,6 @@
+<picker-toolbar [title]="title"></picker-toolbar>
+<div class="assertion">
+  <div *ngFor="let assertion of assertion$ | async">
+    <picker-card [item]="assertion" (selected)="goto($event)"></picker-card>
+  </div>
+</div>

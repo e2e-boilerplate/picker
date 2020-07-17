@@ -28,7 +28,8 @@ export class RunnerComponent implements OnInit {
   }
 
   goto(id: string): void {
-    this.boilerFacade.updateBoiler({ module: id})
+    this.boilerFacade.updateBoiler({ runner: id})
     this.boilerFacade.buildPath();
+    this.router.navigate(['/assertion'])
   }
 }

@@ -28,6 +28,7 @@ export const initialState: State = boilerAdapter.getInitialState({
     module: null,
     bundler: null,
     runner: null,
+    assertion: null,
   },
   version: {},
   header: '',

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ApproachComponent } from './approach.component';
+import { EndComponent } from './end.component';
 
-
-const routes: Routes = [{ path: '', component: ApproachComponent}];
+const routes: Routes = [{ path: '', component: EndComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ApproachRoutingModule { }
+export class EndRoutingModule { }

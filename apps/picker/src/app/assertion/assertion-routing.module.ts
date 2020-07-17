@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ApproachComponent } from './approach.component';
+import { AssertionComponent } from './assertion.component';
 
 
-const routes: Routes = [{ path: '', component: ApproachComponent}];
+const routes: Routes = [{ path: '', component: AssertionComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ApproachRoutingModule { }
+export class AssertionRoutingModule { }

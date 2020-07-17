@@ -34,6 +34,14 @@ const routes: Routes = [
     path: 'runner',
     loadChildren: () => import('./runner/runner.module').then((m) => m.RunnerModule),
   },
+  {
+    path: 'assertion',
+    loadChildren: () => import('./assertion/assertion.module').then((m) => m.AssertionModule),
+  },
+  {
+    path: 'end',
+    loadChildren: () => import('./end/end.module').then((m) => m.EndModule),
+  },
 ];
 
 @NgModule({

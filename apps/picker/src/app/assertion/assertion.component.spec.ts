@@ -1,22 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { AssertionComponent } from './assertion.component';
+import { SharedModule } from '../shared/shared.module';
+import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
+import { LAND } from '@picker/constants';
+import { LandService, LandServiceMock } from '@picker/core-data';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { RunnerComponent } from './runner.component';
-import { SharedModule } from '../shared/shared.module';
-import { BoilerFacade, BoilerFacadeMock } from '@picker/boiler';
-import { LAND } from '@picker/constants';
-import {
-  LandService,
-  LandServiceMock
-} from '@picker/core-data';
-import { Router } from '@angular/router';
-import { of } from 'rxjs';
-
-describe('RunnerComponent', () => {
-  let component: RunnerComponent;
-  let fixture: ComponentFixture<RunnerComponent>;
+describe('AssertionComponent', () => {
+  let component: AssertionComponent;
+  let fixture: ComponentFixture<AssertionComponent>;
   const boilerFacadeMock = new BoilerFacadeMock();
   const landServiceMock = new LandServiceMock();
   let compiled: any;
@@ -24,7 +20,7 @@ describe('RunnerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, SharedModule, HttpClientTestingModule],
-      declarations: [ RunnerComponent ],
+      declarations: [ AssertionComponent ],
       providers: [
         { provide: BoilerFacade, useValue: boilerFacadeMock},
         { provide: LandService, useValue: landServiceMock }
@@ -35,7 +31,7 @@ describe('RunnerComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RunnerComponent);
+    fixture = TestBed.createComponent(AssertionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
@@ -43,7 +39,7 @@ describe('RunnerComponent', () => {
 
   it('should create', async () => {
     expect(component).toBeTruthy();
-    expect(component.title).toEqual('Approach');
+    expect(component.title).toEqual('Assertion');
 
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
     const boilerBuildSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
@@ -52,9 +48,9 @@ describe('RunnerComponent', () => {
     fixture.detectChanges();
     await fixture.whenStable();
 
-    expect(boilerUpdateSpy).toHaveBeenCalledWith({runner: null});
+    expect(boilerUpdateSpy).toHaveBeenCalledWith({assertion: null});
     expect(boilerBuildSpy).toHaveBeenCalledTimes(1);
-    component.runner$.subscribe(value => {
+    component.assertion$.subscribe(value => {
       expect(value).toEqual(LAND);
     });
   });
@@ -71,19 +67,19 @@ describe('RunnerComponent', () => {
   it('goto', () => {
     const router: Router = TestBed.inject(Router);
     const routerSpy = spyOn<Router>(router, 'navigate');
-    const gotoSpy = spyOn<RunnerComponent>(component, 'goto').and.callThrough();
+    const gotoSpy = spyOn<AssertionComponent>(component, 'goto').and.callThrough();
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
     const boilerBuildSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
-    component.goto('jest');
+    component.goto('assert');
     fixture.detectChanges();
 
     expect(gotoSpy).toHaveBeenCalledTimes(1);
-    expect(gotoSpy).toHaveBeenCalledWith('jest');
+    expect(gotoSpy).toHaveBeenCalledWith('assert');
 
-    expect(boilerUpdateSpy).toHaveBeenCalledWith({runner: 'jest'});
+    expect(boilerUpdateSpy).toHaveBeenCalledWith({assertion: 'assert'});
     expect(boilerBuildSpy).toHaveBeenCalledTimes(1);
 
-    expect(routerSpy).toHaveBeenCalledWith(["/assertion"]);
+    expect(routerSpy).toHaveBeenCalledWith(["/end"]);
     expect(routerSpy).toHaveBeenCalledTimes(1);
   });
 });

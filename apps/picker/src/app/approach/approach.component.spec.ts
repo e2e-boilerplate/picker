@@ -25,6 +25,7 @@ describe('ApproachComponent', () => {
         { provide: BoilerFacade, useValue: boilerFacadeMock},
         { provide: LandService, useValue: landServiceMock }
       ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

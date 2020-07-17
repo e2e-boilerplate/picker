@@ -9,6 +9,7 @@ export interface IBoilerEntity {
   module: string | null;
   bundler: string | null;
   runner: string | null;
+  assertion: string | null;
 }
 
 export interface IVersionEntity {

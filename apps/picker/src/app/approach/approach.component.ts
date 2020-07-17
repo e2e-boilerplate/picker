@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Observable } from 'rxjs';
 import { ILand } from '@picker/constants';
 import { LandService } from '@picker/core-data';
-import { Router } from '@angular/router';
 import { BoilerFacade } from '@picker/boiler';
 
 @Component({
