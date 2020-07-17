@@ -7,13 +7,13 @@ import { LandService } from '@picker/core-data';
 import { BoilerFacade } from '@picker/boiler';
 
 @Component({
-  selector: 'picker-bundler',
-  templateUrl: './bundler.component.html',
-  styleUrls: ['./bundler.component.css']
+  selector: 'picker-runner',
+  templateUrl: './runner.component.html',
+  styleUrls: ['./runner.component.css']
 })
-export class BundlerComponent implements OnInit {
-  title = 'Bundler';
-  bundler$: Observable<ILand[]>
+export class RunnerComponent implements OnInit {
+  title = 'Approach';
+  runner$: Observable<ILand[]>;
 
   constructor(
     private landService: LandService,
@@ -22,14 +22,13 @@ export class BundlerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.boilerFacade.updateBoiler({ bundler: null });
+    this.boilerFacade.updateBoiler({ runner: null});
     this.boilerFacade.buildPath();
-    this.bundler$ = this.landService.getLand();
+    this.runner$ = this.landService.getLand();
   }
 
-  goto(id: string) {
-    this.boilerFacade.updateBoiler({ bundler: id});
+  goto(id: string): void {
+    this.boilerFacade.updateBoiler({ module: id})
     this.boilerFacade.buildPath();
-    this.router.navigate(['/runner']);
   }
 }

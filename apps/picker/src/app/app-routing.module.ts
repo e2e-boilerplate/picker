@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'bundler',
     loadChildren: () => import('./bundler/bundler.module').then((m) => m.BundlerModule),
   },
+  {
+    path: 'runner',
+    loadChildren: () => import('./runner/runner.module').then((m) => m.RunnerModule),
+  },
 ];
 
 @NgModule({

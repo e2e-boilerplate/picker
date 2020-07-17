@@ -83,7 +83,7 @@ describe('BundlerComponent', () => {
     expect(boilerUpdateSpy).toHaveBeenCalledWith({bundler: 'webpack'});
     expect(boilerPathSpy).toHaveBeenCalledTimes(1);
 
-    // expect(routerSpy).toHaveBeenCalledWith(["/..."]);
-    expect(routerSpy).toHaveBeenCalledTimes(0);
+    expect(routerSpy).toHaveBeenCalledWith(["/runner"]);
+    expect(routerSpy).toHaveBeenCalledTimes(1);
   });
 });

@@ -8,6 +8,7 @@ export interface IBoilerEntity {
   javascript: string | null;
   module: string | null;
   bundler: string | null;
+  runner: string | null;
 }
 
 export interface IVersionEntity {
