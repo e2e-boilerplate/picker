@@ -37,6 +37,9 @@ export class ModuleComponent implements OnInit {
       if(parts.includes('typescript') && parts.includes('cypress') && parts.includes('browser')) {
         this.router.navigate(['/bundler']);
       }
+      if(parts.includes('es-modules') && parts.includes('cypress') && parts.includes('browser')) {
+        this.router.navigate(['/runner']);
+      }
     });
   }
 }

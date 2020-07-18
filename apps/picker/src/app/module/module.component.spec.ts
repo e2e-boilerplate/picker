@@ -68,7 +68,7 @@ describe('ModuleComponent', () => {
     expect(item).toBeDefined();
   });
 
-  it('goto',  () => {
+  it('goto typescript',  () => {
     const router: Router = TestBed.inject(Router);
     const gotoSpy = spyOn<ModuleComponent>(component, 'goto').and.callThrough();
     const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
@@ -85,6 +85,26 @@ describe('ModuleComponent', () => {
     expect(boilerPathSpy).toHaveBeenCalledTimes(1);
 
     expect(routerSpy).toHaveBeenCalledWith(["/bundler"]);
+    expect(routerSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('goto es-module',  () => {
+    const router: Router = TestBed.inject(Router);
+    const gotoSpy = spyOn<ModuleComponent>(component, 'goto').and.callThrough();
+    const boilerUpdateSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'updateBoiler').and.callThrough();
+    const boilerPathSpy = spyOn<BoilerFacadeMock>(boilerFacadeMock, 'buildPath').and.callThrough();
+    const routerSpy = spyOn<Router>(router, 'navigate');
+    component.header$ = of('es-modules cypress browser');
+    component.goto('es-modules');
+    fixture.detectChanges();
+
+    expect(gotoSpy).toHaveBeenCalledTimes(1);
+    expect(gotoSpy).toHaveBeenCalledWith('es-modules');
+
+    expect(boilerUpdateSpy).toHaveBeenCalledWith({module: 'es-modules'});
+    expect(boilerPathSpy).toHaveBeenCalledTimes(1);
+
+    expect(routerSpy).toHaveBeenCalledWith(["/runner"]);
     expect(routerSpy).toHaveBeenCalledTimes(1);
   });
 });
