@@ -60,7 +60,7 @@
     "@nrwl/cypress": "9.5.1",
     "@nrwl/jest": "9.5.1",
     "@nrwl/nx": "7.8.7",
-    "@nrwl/workspace": "9.5.1",
+    "@nrwl/workspace": "10.0.12",
     "@types/jest": "26.0.10",
     "@types/node": "8.10.62",
     "angular-cli-ghpages": "0.6.2",
