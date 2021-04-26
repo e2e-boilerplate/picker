@@ -43,7 +43,7 @@
     "@angular/router": "9.1.12",
     "@nrwl/angular": "9.5.1",
     "core-js": "2.6.11",
-    "rxjs": "6.6.2",
+    "rxjs": "6.6.7",
     "zone.js": "0.10.3",
     "@ngrx/store": "10.0.0",
     "@ngrx/effects": "10.0.0",
