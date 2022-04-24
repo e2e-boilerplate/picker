@@ -51,8 +51,8 @@
     "@ngrx/router-store": "10.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.1000.7",
-    "@angular/cli": "9.1.12",
+    "@angular-devkit/build-angular": "0.1102.19",
+    "@angular/cli": "9.1.15",
     "@angular/compiler-cli": "9.1.12",
     "@angular/language-service": "9.1.12",
     "@ngrx/schematics": "10.0.0",
